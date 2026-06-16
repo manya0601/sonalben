@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sonalben Khakhrawala — Traditional handcrafted Gujarati snacks. Taste the family heritage in every crunch.">
+  <title>Sonalben Khakhrawala — Handcrafted Gujarati Snacks & Family Recipes</title>
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23C25A15'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='Georgia' font-weight='800' font-size='14' fill='%23FFFBF5'%3ESK%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <!-- LOADING SCREEN -->
+  <div class="loading-screen" id="loader">
+    <div class="loading-spinner">
+      <div class="loading-khakhra"></div>
+    </div>
+    <div class="loading-brand">SONALBEN</div>
+    <div class="loading-tagline">Taste the Family Heritage</div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="main-nav" id="main-nav">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <div class="nav-logo-icon">SK</div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-brand">Sonalben</span>
+          <span class="nav-logo-sub">Khakhrawala</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#pantry">The Pantry</a></li>
+        <li><a href="#cookbook">Family Cookbook</a></li>
+        <li><a href="#moments">Memories</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-cart" aria-label="Cart">
+          <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="nav-cart-count">0</span>
+        </button>
+        <button class="nav-menu-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- IMMERSIVE HERO SECTION (Restored Illustrated Kitchen Background) -->
+  <section class="hero-section" id="hero">
+    <div class="hero-bg">
+      <img src="assets/images/hero_kitchen.png" alt="Traditional Gujarati kitchen" loading="eager">
+    </div>
+
+    <!-- Floating Real Product Assets & Subtle Hand-drawn Sketches -->
+    <div class="floating-foods">
+      <img src="assets/images/jeera_khakhra_single.png" class="food-img food-img--jeera" data-speed="1.3" alt="Jeera Khakhra">
+      <img src="assets/images/fafda_single.png" class="food-img food-img--fafda" data-speed="0.8" alt="Fafda">
+      <img src="assets/images/gathiya_single.png" class="food-img food-img--gathiya" data-speed="1.6" alt="Bhavnagari Gathiya">
+      <img src="assets/images/ratlami_sev_single.png" class="food-img food-img--sev" data-speed="0.9" alt="Ratlami Sev">
+      <img src="assets/images/masala_khakhra_single.png" class="food-img food-img--masala" data-speed="1.2" alt="Masala Khakhra">
+      <img src="assets/images/pickle_jar.png" class="food-img food-img--pickle" data-speed="1.4" alt="Gujarati Pickle Jar">
+      <img src="assets/images/mix_namkeen_single.png" class="food-img food-img--namkeen" data-speed="1.0" alt="Mix Namkeen">
+      
+      <!-- Hand-drawn sketches for extra handcrafted texture -->
+      <div class="sketch-img sketch-img--belan" data-speed="1.1">
+        <svg viewBox="0 0 100 30"><path d="M 5,15 L 20,15 M 20,10 L 80,10 L 80,20 L 20,20 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M 80,15 L 95,15 M 10,13 L 10,17 M 90,13 L 90,17" fill="none" stroke="currentColor" stroke-width="1.2" /><path d="M 30,13 Q 50,14 70,13" fill="none" stroke="currentColor" stroke-width="0.8" stroke-dasharray="3 3" /></svg>
+      </div>
+      <div class="sketch-img sketch-img--chah" data-speed="1.5">
+        <svg viewBox="0 0 60 60"><path d="M 15,20 L 45,20 L 38,50 L 22,50 Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /><path d="M 45,25 C 53,25 53,40 41,40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /><path d="M 10,54 L 50,54" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" /><path d="M 23,15 Q 25,5 23,2 M 30,15 Q 32,5 30,2" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" /></svg>
+      </div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge"><span>✦ Hand-Rolled, Slow-Roasted ✦</span></div>
+      <h1 class="hero-title">Every <span class="highlight">Crunch</span><br>Tells A Story</h1>
+      <p class="hero-subtitle">The digital home of Sonalben Khakhrawala. We craft stone-ground, authentic Gujarati snacks rooted in family tradition.</p>
+      <div class="hero-ctas">
+        <a href="#pantry" class="btn btn-primary">Browse The Pantry</a>
+        <a href="#cookbook" class="btn btn-ghost">Our Recipes</a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+  </section>
+
+  <!-- SCRAPBOOK TIMELINE (The Family Album) -->
+  <section class="story-section" id="story">
+    <span class="gujarati-accent-script">અમારી સફર</span>
+    <div class="section-header">
+      <span class="section-tag">Our Scrapbook</span>
+      <h2>A Family Built on Crunch</h2>
+      <p>Discover our family album and the steps that shaped Sonalben Khakhrawala</p>
+    </div>
+
+    <div class="scrapbook-timeline">
+      <div class="scrapbook-stitched-seam"></div>
+      
+      <!-- Milestone 1 -->
+      <div class="scrapbook-milestone">
+        <div class="milestone-pin"></div>
+        <div class="milestone-visual">
+          <div class="scrapbook-polaroid-card">
+            <img src="assets/images/khakhra_stack.png" alt="Sonalben's small kitchen">
+            <div class="polaroid-script">Wooden rolling pin, 1990</div>
+            <div class="postit-note milestone-1-postit">First Batch!</div>
+          </div>
+        </div>
+        <div class="milestone-content">
+          <span class="milestone-year">1990</span>
+          <h3>A Small Home Kitchen</h3>
+          <p>Sonalben started in her cozy home kitchen, rolling thin whole wheat discs on a simple wooden board. Roasting them over a slow flame, she served neighbors who immediately loved the clean, crispy texture.</p>
+        </div>
+      </div>
+
+      <!-- Milestone 2 -->
+      <div class="scrapbook-milestone">
+        <div class="milestone-pin"></div>
+        <div class="milestone-visual">
+          <div class="scrapbook-polaroid-card">
+            <img src="assets/images/spice_ingredients.png" alt="Handmade batches">
+            <div class="polaroid-script">Iron pan roasting</div>
+          </div>
+        </div>
+        <div class="milestone-content">
+          <span class="milestone-year">1993</span>
+          <h3>First Handmade Batches</h3>
+          <p>As orders grew, the family came together to stone-grind local spices like cumin and fenugreek. Pressing and roasting each batch by hand on heavy iron griddles to maintain the homemade goodness.</p>
+        </div>
+      </div>
+
+      <!-- Milestone 3 -->
+      <div class="scrapbook-milestone">
+        <div class="milestone-pin"></div>
+        <div class="milestone-visual">
+          <div class="scrapbook-polaroid-card">
+            <img src="assets/images/food_collection.png" alt="Bicycle delivery">
+            <div class="polaroid-script">Bicycle deliveries</div>
+            <div class="postit-note milestone-3-postit">Pure Wheat 🌾</div>
+          </div>
+        </div>
+        <div class="milestone-content">
+          <span class="milestone-year">1997</span>
+          <h3>Early Local Customers</h3>
+          <p>Neighborhood tea stalls and local stores began ordering daily stacks. The family packed the fresh snacks in simple craft bags, delivering them on bicycles. Trust grew, one daily bite at a time.</p>
+        </div>
+      </div>
+
+      <!-- Milestone 4 -->
+      <div class="scrapbook-milestone">
+        <div class="milestone-pin"></div>
+        <div class="milestone-visual">
+          <div class="scrapbook-polaroid-card">
+            <img src="assets/images/family_teatime.png" alt="First store awning">
+            <div class="polaroid-script">First Store, Ahmedabad</div>
+          </div>
+        </div>
+        <div class="milestone-content">
+          <span class="milestone-year">2005</span>
+          <h3>Growing Trust in Ahmedabad</h3>
+          <p>We raised our first commercial retail awning in Ahmedabad. The city embraced Sonalben's fresh, hand-roasted khakhras as the ultimate companion to hot afternoon ginger tea.</p>
+        </div>
+      </div>
+
+      <!-- Milestone 5 -->
+      <div class="scrapbook-milestone">
+        <div class="milestone-pin"></div>
+        <div class="milestone-visual">
+          <div class="scrapbook-polaroid-card">
+            <img src="assets/images/festival_hamper.png" alt="Store expansion">
+            <div class="polaroid-script">Traditional expansion</div>
+          </div>
+        </div>
+        <div class="milestone-content">
+          <span class="milestone-year">2012</span>
+          <h3>Opening Dedicated Stores</h3>
+          <p>We expanded to dedicated branches across different sectors of the city. We added fresh, crispy Fafda, melt-in-mouth Gathiya, and spicy Sev, staying true to our core family kitchen standards.</p>
+        </div>
+      </div>
+
+      <!-- Milestone 6 -->
+      <div class="scrapbook-milestone">
+        <div class="milestone-pin"></div>
+        <div class="milestone-visual">
+          <div class="scrapbook-polaroid-card">
+            <img src="assets/images/festival_diwali.png" alt="Diwali hampers">
+            <div class="polaroid-script">Celebrating family</div>
+            <div class="postit-note milestone-6-postit">For Bappa 🪔</div>
+          </div>
+        </div>
+        <div class="milestone-content">
+          <span class="milestone-year">2018</span>
+          <h3>Serving Generations of Families</h3>
+          <p>Sonalben's snacks became a staple of daily life, marriage hampers, and school recesses. Children who once ate our bicycle snacks now bring their own kids to our storefronts.</p>
+        </div>
+      </div>
+
+      <!-- Milestone 7 -->
+      <div class="scrapbook-milestone">
+        <div class="milestone-pin"></div>
+        <div class="milestone-visual">
+          <div class="scrapbook-polaroid-card">
+            <img src="assets/images/hero_kitchen.png" alt="Sonalben Khakhrawala today">
+            <div class="polaroid-script">Ahmedabad, Today</div>
+          </div>
+        </div>
+        <div class="milestone-content">
+          <span class="milestone-year">Today</span>
+          <h3>Modern Sonalben Today</h3>
+          <p>While Sonalben now exports domestic and international packages, our core process remains unchanged. Every khakhra is still hand-pressed, roasted, and packed with the same family warmth we started with in 1990.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- THE PANTRY (Audited Pantry Product Grid - 16 Categories) -->
+  <section class="products-section" id="pantry">
+    <span class="gujarati-accent-script">અમારી લિસ્ટ</span>
+    <div class="section-header">
+      <span class="section-tag">The Pantry</span>
+      <h2>Our Traditional Snack Shelf</h2>
+      <p>Browse our verified range of authentic, hand-roasted Gujarati snacks</p>
+    </div>
+
+    <!-- Product Category Filters -->
+    <div class="product-filters">
+      <button class="filter-btn is-active" data-filter="all">Show All</button>
+      <button class="filter-btn" data-filter="khakhra">Khakhra</button>
+      <button class="filter-btn" data-filter="farsan">Gathiya & Fafda</button>
+      <button class="filter-btn" data-filter="sev">Sev & Namkeen</button>
+      <button class="filter-btn" data-filter="pickle-papad">Pickles & Papad</button>
+      <button class="filter-btn" data-filter="hamper">Hampers</button>
+    </div>
+
+    <div class="product-grid" id="product-grid-main">
+      
+      <!-- 1. Plain Khakhra -->
+      <div class="product-card" data-category="khakhra">
+        <div class="product-image-wrap">
+          <span class="product-badge">Whole Wheat Classic</span>
+          <img src="assets/images/khakhra_stack.png" alt="Plain Khakhra">
+          <div class="product-ingredients-hover">
+            <h4 class="hover-ingredients-title">Core Ingredients</h4>
+            <div class="hover-ingredients-list">
+              <span>🌾 Whole Wheat Flour</span>
+              <span>💧 Purified Water</span>
+              <span>🌿 Cold-pressed Groundnut Oil</span>
+              <span>🧂 Sea Salt</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Khakhra</span>
+          <h3 class="product-name">Plain Khakhra</h3>
+          <p class="product-desc">The original tissue-thin roasted cracker. Brittle, golden patches, healthy, and completely organic.</p>
+          <div class="product-details-chips">
+            <span class="pki-chip">Texture: Wafer-Thin</span>
+            <span class="pki-chip">Packaging: Vacuum Sealed</span>
+          </div>
+          <div class="product-pairings">🫖 <strong>Best Pairing:</strong> Ghee & spicy mango pickle.</div>
+          <div class="product-footer">
+            <span class="product-price">₹100 <span class="price-unit">/ 200g</span></span>
+            <button class="add-to-cart" data-id="p1" data-name="Plain Khakhra" data-price="100"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Methi Khakhra -->
+      <div class="product-card" data-category="khakhra">
+        <div class="product-image-wrap">
+          <span class="product-badge badge-favorite">Bestseller</span>
+          <img src="assets/images/khakhra_stack.png" alt="Methi Khakhra">
+          <div class="product-ingredients-hover">
+            <h4 class="hover-ingredients-title">Core Ingredients</h4>
+            <div class="hover-ingredients-list">
+              <span>🌿 Sun-dried Fenugreek</span>
+              <span>🌾 Whole Wheat Flour</span>
+              <span>✨ Organic Turmeric</span>
+              <span>🧂 Sea Salt</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Khakhra</span>
+          <h3 class="product-name">Methi Khakhra</h3>
+          <p class="product-desc">Our hallmark recipe. Roasted wheat layers enriched with bitter-sweet sun-dried organic fenugreek leaves.</p>
+          <div class="product-details-chips">
+            <span class="pki-chip">Texture: Crisp & Brittle</span>
+            <span class="pki-chip">Packaging: Foil Packaged</span>
+          </div>
+          <div class="product-pairings">🫖 <strong>Best Pairing:</strong> Morning Masala Ginger Chai.</div>
+          <div class="product-footer">
+            <span class="product-price">₹120 <span class="price-unit">/ 200g</span></span>
+            <button class="add-to-cart" data-id="p2" data-name="Methi Khakhra" data-price="120"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Jeera Khakhra -->
+      <div class="product-card" data-category="khakhra">
+        <div class="product-image-wrap">
+          <span class="product-badge">Digestive Aid</span>
+          <img src="assets/images/jeera_khakhra_single.png" alt="Jeera Khakhra">
+          <div class="product-ingredients-hover">
+            <h4 class="hover-ingredients-title">Core Ingredients</h4>
+            <div class="hover-ingredients-list">
+              <span>✨ Unjha Cumin Seeds</span>
+              <span>🌾 Whole Wheat Flour</span>
+              <span>🧂 Pink Rock Salt</span>
+              <span>💧 Pure Water</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Khakhra</span>
+          <h3 class="product-name">Jeera Khakhra</h3>
+          <p class="product-desc">Golden wheat cracker studded with roasted cumin seeds that release warm, smoky oils during our slow-roasting process.</p>
+          <div class="product-details-chips">
+            <span class="pki-chip">Texture: Thin & Crunchy</span>
+            <span class="pki-chip">Packaging: Vacuum Sealed</span>
+          </div>
+          <div class="product-pairings">🫖 <strong>Best Pairing:</strong> Smeared with butter or home curd.</div>
+          <div class="product-footer">
+            <span class="product-price">₹110 <span class="price-unit">/ 200g</span></span>
+            <button class="add-to-cart" data-id="p3" data-name="Jeera Khakhra" data-price="110"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Masala Khakhra -->
+      <div class="product-card" data-category="khakhra">
+        <div class="product-image-wrap">
+          <span class="product-badge badge-spicy">Mild Kick</span>
+          <img src="assets/images/masala_khakhra_single.png" alt="Masala Khakhra">
+          <div class="product-ingredients-hover">
+            <h4 class="hover-ingredients-title">Core Ingredients</h4>
+            <div class="hover-ingredients-list">
+              <span>🌶️ Red Chili Dust</span>
+              <span>🌾 Whole Wheat Flour</span>
+              <span>✨ Chat Masala</span>
+              <span>🧄 Mild Asafoetida</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Khakhra</span>
+          <h3 class="product-name">Masala Khakhra</h3>
+          <p class="product-desc">Savory thin crackers dusted with a vibrant blend of red chili powder, turmeric, salt, and mango dust.</p>
+          <div class="product-details-chips">
+            <span class="pki-chip">Texture: Spicy Brittle</span>
+            <span class="pki-chip">Packaging: Foil Packaged</span>
+          </div>
+          <div class="product-pairings">🫖 <strong>Best Pairing:</strong> Coriander dip or spicy green chutney.</div>
+          <div class="product-footer">
+            <span class="product-price">₹125 <span class="price-unit">/ 200g</span></span>
+            <button class="add-to-cart" data-id="p4" data-name="Masala Khakhra" data-price="125"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Diet Khakhra -->
+      <div class="product-card" data-category="khakhra">
+        <div class="product-image-wrap">
+          <span class="product-badge">Zero Added Oil</span>
+          <img src="assets/images/khakhra_stack.png" alt="Diet Khakhra" style="filter: saturate(0.55)">
+          <div class="product-ingredients-hover">
+            <h4 class="hover-ingredients-title">Core Ingredients</h4>
+            <div class="hover-ingredients-list">
+              <span>🌾 Whole Wheat (High Fiber)</span>
+              <span>🧂 Sea Salt</span>
+              <span>💧 Purified Water</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Khakhra</span>
+          <h3 class="product-name">Diet Khakhra</h3>
+          <p class="product-desc">Slow roasted completely dry with zero added oil. Clean, high-fiber, low-calorie, and highly nutritious.</p>
+          <div class="product-details-chips">
+            <span class="pki-chip">Texture: Extra-Firm Crisp</span>
+            <span class="pki-chip">Packaging: Pack of 5 stacks</span>
+          </div>
+          <div class="product-pairings">🫖 <strong>Best Pairing:</strong> Organic Green Tea or plain curd.</div>
+          <div class="product-footer">
+            <span class="product-price">₹130 <span class="price-unit">/ 200g</span></span>
+            <button class="add-to-cart" data-id="p5" data-name="Diet Khakhra" data-price="130"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Traditional Fafda -->
+      <div class="product-card" data-category="farsan">
+        <div class="product-image-wrap">
+          <span class="product-badge badge-favorite">Sunday Ritual</span>
+          <img src="assets/images/fafda_single.png" alt="Traditional Fafda">
+          <div class="product-ingredients-hover">
+            <h4 class="hover-ingredients-title">Core Ingredients</h4>
+            <div class="hover-ingredients-list">
+              <span>Besan (Gram Flour)</span>
+              <span>🌿 Ajwain (Carom Seeds)</span>
+              <span>🧂 Papad Khar</span>
+              <span>💧 Pure Water</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Gathiya & Fafda</span>
+          <h3 class="product-name">Traditional Fafda</h3>
+          <p class="product-desc">Long, flat, yellow gram flour ribbons, hand-pressed and deep fried. Bubbled texture, brittle and savory.</p>
+          <div class="product-details-chips">
+            <span class="pki-chip">Texture: Lightly Crispy</span>
+            <span class="pki-chip">Packaging: Airtight Box</span>
+          </div>
+          <div class="product-pairings">🫖 <strong>Best Pairing:</strong> Papaya salad & fried green chilies.</div>
+          <div class="product-footer">
+            <span class="product-price">₹160 <span class="price-unit">/ 250g</span></span>
+            <button class="add-to-cart" data-id="p6" data-name="Traditional Fafda" data-price="160"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Bhavnagari Gathiya -->
+      <div class="product-card" data-category="farsan">
+        <div class="product-image-wrap">
+          <span class="product-badge">Soft Bite</span>
+          <img src="assets/images/gathiya_single.png" alt="Bhavnagari Gathiya">
+          <div class="product-ingredients-hover">
+            <h4 class="hover-ingredients-title">Core Ingredients</h4>
+            <div class="hover-ingredients-list">
+              <span>✨ Pure Bengal Gram Flour</span>
+              <span>🌿 Carom Seeds (Ajwain)</span>
+              <span>🧂 Black Pepper Dust</span>
+              <span>💧 Groundnut Oil</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Gathiya & Fafda</span>
+          <h3 class="product-name">Bhavnagari Gathiya</h3>
+          <p class="product-desc">Soft, thick, hollow chickpea strands. Seasoned gently with whole ajwain, melting effortlessly in your mouth.</p>
+          <div class="product-details-chips">
+            <span class="pki-chip">Texture: Soft & Porous</span>
+            <span class="pki-chip">Packaging: Seal Lock Bag</span>
+          </div>
+          <div class="product-pairings">🫖 <strong>Best Pairing:</strong> Sweet Jalebi & hot tea.</div>
+          <div class="product-footer">
+            <span class="product-price">₹140 <span class="price-unit">/ 250g</span></span>
+            <button class="add-to-cart" data-id="p7" data-name="Bhavnagari Gathiya" data-price="140"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Plain Gathiya -->
+      <div class="product-card" data-category="farsan">
+        <div class="product-image-wrap">
+          <span class="product-badge">Daily Tea-Time</span>
+          <img src="assets/images/gathiya_single.png" alt="Plain Gathiya" style="filter: hue-rotate(10deg)">
+          <div class="product-ingredients-hover">
+            <h4 class="hover-ingredients-title">Core Ingredients</h4>
+            <div class="hover-ingredients-list">
+              <span>✨ Premium Besan</span>
+              <span>🧂 Sea Salt</span>
+              <span>💧 Purified Water</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Gathiya & Fafda</span>
+          <h3 class="product-name">Plain Gathiya</h3>
+          <p class="product-desc">Classic crunchy besan strands, simple and mildly seasoned. A staple dry snack in every Gujarati pantry.</p>
+          <div class="product-details-chips">
+            <span class="pki-chip">Texture: Crispy & Solid</span>
+            <span class="pki-chip">Packaging: Seal Lock Bag</span>
+          </div>
+          <div class="product-pairings">🫖 <strong>Best Pairing:</strong> Combined with roasted peanuts or tea.</div>
+          <div class="product-footer">
+            <span class="product-price">₹130 <span class="price-unit">/ 250g</span></span>
+            <button class="add-to-cart" data-id="p8" data-name="Plain Gathiya" data-price="130"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. Spicy Sev -->
+      <div class="product-card" data-category="sev">
+        <div class="product-image-wrap">
+          <span class="product-badge badge-spicy">Hot & Bold</span>
+          <img src="assets/images/ratlami_sev_single.png" alt="Spicy Sev" style="filter: saturate(0.8)">
+          <div class="product-ingredients-hover">
+            <h4 class="hover-ingredients-title">Core Ingredients</h4>
+            <div class="hover-ingredients-list">
+              <span>🌶️ Red Chili Dust</span>
+              <span>✨ Gram Flour (Besan)</span>
+              <span>🧂 Black Pepper</span>
+              <span>🧄 Asafoetida</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Sev & Namkeen</span>
+          <h3 class="product-name">Spicy Sev</h3>
+          <p class="product-desc">Fine, crunchy gram flour strings seasoned with dry red chili, pepper, and garlic dust.</p>
+          <div class="product-details-chips">
+            <span class="pki-chip">Texture: Fine & Brittle</span>
+            <span class="pki-chip">Packaging: Sealed Packet</span>
+          </div>
+          <div class="product-pairings">🫖 <strong>Best Pairing:</strong> Topped on morning poha or curds.</div>
+          <div class="product-footer">
+            <span class="product-price">₹125 <span class="price-unit">/ 250g</span></span>
+            <button class="add-to-cart" data-id="p9" data-name="Spicy Sev" data-price="125"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. Ratlami Sev -->
+      <div class="product-card" data-category="sev">
+        <div class="product-image-wrap">
+          <span class="product-badge badge-spicy">Extra Hot</span>
+          <img src="assets/images/ratlami_sev_single.png" alt="Ratlami Sev">
+          <div class="product-ingredients-hover">
+            <h4 class="hover-ingredients-title">Core Ingredients</h4>
+            <div class="hover-ingredients-list">
+              <span>✨ Besan (Gram Flour)</span>
+              <span>🌿 Clove Powder (Laung)</span>
+              <span>🧂 Coarse Black Pepper</span>
+              <span>🌶️ Ratlami Spices</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Sev & Namkeen</span>
+          <h3 class="product-name">Ratlami Sev</h3>
+          <p class="product-desc">Our spiciest line. Thick besan strands heavily seasoned with crushed cloves, pepper, and local herbs.</p>
+          <div class="product-details-chips">
+            <span class="pki-chip">Texture: Extra Crunchy</span>
+            <span class="pki-chip">Packaging: Foil Packaged</span>
+          </div>
+          <div class="product-pairings">🫖 <strong>Best Pairing:</strong> Fresh lemon juice and chopped onions.</div>
+          <div class="product-footer">
+            <span class="product-price">₹135 <span class="price-unit">/ 250g</span></span>
+            <button class="add-to-cart" data-id="p10" data-name="Ratlami Sev" data-price="135"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11. Mix Namkeen -->
+      <div class="product-card" data-category="sev">
+        <div class="product-image-wrap">
+          <span class="product-badge badge-favorite">Sweet & Sour</span>
+          <img src="assets/images/mix_namkeen_single.png" alt="Mix Namkeen">
+          <div class="product-ingredients-hover">
+            <h4 class="hover-ingredients-title">Core Ingredients</h4>
+            <div class="hover-ingredients-list">
+              <span>🌾 Rice Flakes (Poha)</span>
+              <span>✨ Besan Sev strands</span>
+              <span>🥜 Fried Peanuts</span>
+              <span>🍇 Golden Raisins</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Sev & Namkeen</span>
+          <h3 class="product-name">Mix Namkeen</h3>
+          <p class="product-desc">Authentic Chavanu. A vibrant mixture of crispy gram flour sev, flattened rice flakes, peanuts, and raisins.</p>
+          <div class="product-details-chips">
+            <span class="pki-chip">Texture: Multi-Texture Crisp</span>
+            <span class="pki-chip">Packaging: Foil Packaged</span>
+          </div>
+          <div class="product-pairings">🫖 <strong>Best Pairing:</strong> Afternoon ginger tea or evening chat.</div>
+          <div class="product-footer">
+            <span class="product-price">₹120 <span class="price-unit">/ 250g</span></span>
+            <button class="add-to-cart" data-id="p11" data-name="Mix Namkeen" data-price="120"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12. Chana Dal -->
+      <div class="product-card" data-category="sev">
+        <div class="product-image-wrap">
+          <span class="product-badge">Protein Power</span>
+          <img src="assets/images/mix_namkeen_single.png" alt="Chana Dal" style="filter: hue-rotate(-15deg) saturate(0.85)">
+          <div class="product-ingredients-hover">
+            <h4 class="hover-ingredients-title">Core Ingredients</h4>
+            <div class="hover-ingredients-list">
+              <span>🌾 Split Bengal Gram</span>
+              <span>🌶️ Red Chili Dust</span>
+              <span>✨ Dry Mango Powder</span>
+              <span>🧂 Rock Salt</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Sev & Namkeen</span>
+          <h3 class="product-name">Chana Dal</h3>
+          <p class="product-desc">Crispy fried split Bengal gram lentils, seasoned with dry mango powder (amchur) and red chili.</p>
+          <div class="product-details-chips">
+            <span class="pki-chip">Texture: Hard & Crunchy</span>
+            <span class="pki-chip">Packaging: Resealable Bag</span>
+          </div>
+          <div class="product-pairings">🫖 <strong>Best Pairing:</strong> Squeeze of fresh lime & mint leaves.</div>
+          <div class="product-footer">
+            <span class="product-price">₹110 <span class="price-unit">/ 200g</span></span>
+            <button class="add-to-cart" data-id="p12" data-name="Chana Dal" data-price="110"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 13. Moong Dal -->
+      <div class="product-card" data-category="sev">
+        <div class="product-image-wrap">
+          <span class="product-badge">Light & Low-Fat</span>
+          <img src="assets/images/mix_namkeen_single.png" alt="Moong Dal" style="filter: hue-rotate(30deg) saturate(0.7)">
+          <div class="product-ingredients-hover">
+            <h4 class="hover-ingredients-title">Core Ingredients</h4>
+            <div class="hover-ingredients-list">
+              <span>🌾 Split Yellow Mung Beans</span>
+              <span>🧂 Fine Sea Salt</span>
+              <span>🌿 Pure Groundnut Oil</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Sev & Namkeen</span>
+          <h3 class="product-name">Moong Dal</h3>
+          <p class="product-desc">Delicate split yellow moong lentils, lightly fried and salted. Simplest, healthiest, and easiest to digest.</p>
+          <div class="product-details-chips">
+            <span class="pki-chip">Texture: Soft Airy Crunch</span>
+            <span class="pki-chip">Packaging: Resealable Bag</span>
+          </div>
+          <div class="product-pairings">🫖 <strong>Best Pairing:</strong> Evening warm green tea or black coffee.</div>
+          <div class="product-footer">
+            <span class="product-price">₹110 <span class="price-unit">/ 200g</span></span>
+            <button class="add-to-cart" data-id="p13" data-name="Moong Dal" data-price="110"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 14. Papad -->
+      <div class="product-card" data-category="pickle-papad">
+        <div class="product-image-wrap">
+          <span class="product-badge">Hand-Rolled</span>
+          <img src="assets/images/spice_ingredients.png" alt="Papad" style="filter: grayscale(0.2) contrast(1.1)">
+          <div class="product-ingredients-hover">
+            <h4 class="hover-ingredients-title">Core Ingredients</h4>
+            <div class="hover-ingredients-list">
+              <span>🌾 Split Urad Flour</span>
+              <span>🧂 Coarse Black Pepper</span>
+              <span>🌿 Asafoetida (Hing)</span>
+              <span>🧂 Alkaline Salt</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Pickles & Papad</span>
+          <h3 class="product-name">Moong & Urad Papad</h3>
+          <p class="product-desc">Hand-rolled sun-dried flour discs loaded with cracked black pepper and asafoetida. Roast or fry to serve.</p>
+          <div class="product-details-chips">
+            <span class="pki-chip">Texture: Paper-Thin Snap</span>
+            <span class="pki-chip">Packaging: Foil Pack of 20</span>
+          </div>
+          <div class="product-pairings">🫖 <strong>Best Pairing:</strong> Topped with chopped onions & chat spice.</div>
+          <div class="product-footer">
+            <span class="product-price">₹90 <span class="price-unit">/ 200g</span></span>
+            <button class="add-to-cart" data-id="p14" data-name="Traditional Papad" data-price="90"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 15. Pickles -->
+      <div class="product-card" data-category="pickle-papad">
+        <div class="product-image-wrap">
+          <span class="product-badge badge-favorite">Sun Cured</span>
+          <img src="assets/images/pickle_jar.png" alt="Spicy Pickles">
+          <div class="product-ingredients-hover">
+            <h4 class="hover-ingredients-title">Core Ingredients</h4>
+            <div class="hover-ingredients-list">
+              <span>🥭 Raw Sour Mangoes</span>
+              <span>✨ Split Mustard Seeds</span>
+              <span>🌿 Fenugreek (Methi) seeds</span>
+              <span>🌶️ Pure Chili Oil</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Pickles & Papad</span>
+          <h3 class="product-name">Spicy Mango Pickle</h3>
+          <p class="product-desc">Methia Athanu. Raw sour mango cubes cured with ground mustard seeds, methi seeds, and red chili oil.</p>
+          <div class="product-details-chips">
+            <span class="pki-chip">Texture: Chunky & Rich</span>
+            <span class="pki-chip">Packaging: Glass Mason Jar</span>
+          </div>
+          <div class="product-pairings">🫖 <strong>Best Pairing:</strong> Hot fresh theplas or plain mathri.</div>
+          <div class="product-footer">
+            <span class="product-price">₹180 <span class="price-unit">/ 300g</span></span>
+            <button class="add-to-cart" data-id="p15" data-name="Spicy Mango Pickle" data-price="180"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 16. Festival Hampers & Gift Packs -->
+      <div class="product-card" data-category="hamper">
+        <div class="product-image-wrap">
+          <span class="product-badge badge-favorite">Premium Box</span>
+          <img src="assets/images/festival_hamper.png" alt="Festival Hamper">
+          <div class="product-ingredients-hover">
+            <h4 class="hover-ingredients-title">Contents</h4>
+            <div class="hover-ingredients-list">
+              <span>🫓 Methi & Jeera Khakhra</span>
+              <span>🥨 Bhavnagari Gathiya</span>
+              <span>🌶️ Ratlami Sev</span>
+              <span>🥭 Mini Mango Pickle Jar</span>
+            </div>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="product-category">Festive Gift Packs</span>
+          <h3 class="product-name">Celebration Gift Box</h3>
+          <p class="product-desc">A premium handcrafted box containing our finest signature snacks. Ideal for corporate gifting, Diwali, or weddings.</p>
+          <div class="product-details-chips">
+            <span class="pki-chip">Design: Patola Silk Crate</span>
+            <span class="pki-chip">Weight: 1.2 kg Assorted</span>
+          </div>
+          <div class="product-pairings">🫖 <strong>Best Gifting:</strong> Navratri garba welcomes or corporate events.</div>
+          <div class="product-footer">
+            <span class="product-price">₹650 <span class="price-unit">/ Hamper</span></span>
+            <button class="add-to-cart" data-id="p16" data-name="Celebration Gift Box" data-price="650"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAMILY COOKBOOK (12 Recipes, Lined Paper Index Cards) -->
+  <section class="recipes-section" id="cookbook">
+    <div class="section-header">
+      <span class="section-tag">Family Cookbook</span>
+      <h2>Our Kitchen Secrets</h2>
+      <p>Traditional snacks and delicious fusions you can easily make at home</p>
+    </div>
+
+    <!-- Filter Tabs -->
+    <div class="recipe-filters">
+      <button class="recipe-filter-btn is-active" data-recipe-filter="all">All Recipes</button>
+      <button class="recipe-filter-btn" data-recipe-filter="street">Street & Chaat</button>
+      <button class="recipe-filter-btn" data-recipe-filter="fusion">Creative Fusion</button>
+      <button class="recipe-filter-btn" data-recipe-filter="quick">Quick Snacking</button>
+    </div>
+
+    <div class="recipe-grid" id="recipe-grid-main">
+      
+      <!-- Recipe 1: Pizza Thepla -->
+      <div class="recipe-card" data-recipe-category="fusion">
+        <div class="recipe-header">
+          <span class="recipe-product-badge">Uses: Fresh Thepla</span>
+          <span class="recipe-time">⏱️ 15 Mins</span>
+        </div>
+        <h3 class="recipe-title">Pizza Thepla Wrap</h3>
+        <p class="recipe-desc">Roll a classic fenugreek-spiced thepla into a delicious wrap filled with capsicum, paneer, oregano, and cream cheese.</p>
+        <div class="recipe-ingredients-brief">
+          <strong>Key Ingredients:</strong> Thepla, pizza sauce, paneer, capsicum, liquid cheese.
+        </div>
+        <div class="recipe-directions-accordion">
+          <ol class="recipe-steps-list">
+            <li>Heat the thepla on a flat pan with a dab of butter.</li>
+            <li>Spread 1 tablespoon of pizza sauce evenly down the center.</li>
+            <li>Add capsicum strips and lightly sautéed paneer cubes.</li>
+            <li>Drizzle melted cheese and sprinkle pizza spices. Roll tight and serve.</li>
+          </ol>
+        </div>
+        <button class="btn-toggle-recipe">View Full Recipe →</button>
+      </div>
+
+      <!-- Recipe 2: Khakhra Chaat -->
+      <div class="recipe-card" data-recipe-category="street">
+        <div class="recipe-header">
+          <span class="recipe-product-badge">Uses: Masala Khakhra</span>
+          <span class="recipe-time">⏱️ 5 Mins</span>
+        </div>
+        <h3 class="recipe-title">Masala Khakhra Chaat</h3>
+        <p class="recipe-desc">A crunchy, light street chat. Roughly crushed masala khakhra topped with potatoes, onions, tamarind chutney, and sev.</p>
+        <div class="recipe-ingredients-brief">
+          <strong>Key Ingredients:</strong> Masala Khakhra, boiled potato, chopped onion, sweet chutney, fine sev.
+        </div>
+        <div class="recipe-directions-accordion">
+          <ol class="recipe-steps-list">
+            <li>Lightly crush 2 Masala Khakhras into a serving plate.</li>
+            <li>Layer with cubes of boiled potatoes and chopped raw onions.</li>
+            <li>Drizzle sweet date-tamarind chutney and spicy green chutney.</li>
+            <li>Garnish heavily with fine gram flour sev and fresh coriander. Eat immediately.</li>
+          </ol>
+        </div>
+        <button class="btn-toggle-recipe">View Full Recipe →</button>
+      </div>
+
+      <!-- Recipe 3: Khakhra Nachos -->
+      <div class="recipe-card" data-recipe-category="fusion">
+        <div class="recipe-header">
+          <span class="recipe-product-badge">Uses: Plain Khakhra</span>
+          <span class="recipe-time">⏱️ 10 Mins</span>
+        </div>
+        <h3 class="recipe-title">Khakhra Nachos</h3>
+        <p class="recipe-desc">Tex-Mex meets Gujarati heritage! Crisp plain khakhra triangles served with black beans, sour cream, and mango salsa.</p>
+        <div class="recipe-ingredients-brief">
+          <strong>Key Ingredients:</strong> Plain Khakhra, beans, sour cream, salsa, jalapeño slices.
+        </div>
+        <div class="recipe-directions-accordion">
+          <ol class="recipe-steps-list">
+            <li>Break Plain Khakhras into triangular chip shapes.</li>
+            <li>Arrange them in a circular pattern on a microwave-safe platter.</li>
+            <li>Layer with seasoned boiled black beans and shredded cheese.</li>
+            <li>Heat for 45 seconds to melt cheese. Top with cold sour cream and salsa.</li>
+          </ol>
+        </div>
+        <button class="btn-toggle-recipe">View Full Recipe →</button>
+      </div>
+
+      <!-- Recipe 4: Sev Puri -->
+      <div class="recipe-card" data-recipe-category="street">
+        <div class="recipe-header">
+          <span class="recipe-product-badge">Uses: Ratlami Sev</span>
+          <span class="recipe-time">⏱️ 8 Mins</span>
+        </div>
+        <h3 class="recipe-title">Ratlami Sev Puri</h3>
+        <p class="recipe-desc">Classic flat street puris layered with standard potatoes, sweet garlic sauces, and overloaded with fiery Ratlami Sev.</p>
+        <div class="recipe-ingredients-brief">
+          <strong>Key Ingredients:</strong> Flat papdis, potato mash, garlic chutney, Ratlami Sev, raw mango slices.
+        </div>
+        <div class="recipe-directions-accordion">
+          <ol class="recipe-steps-list">
+            <li>Arrange flat papdis on a plate.</li>
+            <li>Place a small dollop of mashed spiced potato on each.</li>
+            <li>Drizzle red chili-garlic chutney and green mint sauce.</li>
+            <li>Cover the entire assembly with a mountain of coarse Ratlami Sev. Garnish with sour mango bits.</li>
+          </ol>
+        </div>
+        <button class="btn-toggle-recipe">View Full Recipe →</button>
+      </div>
+
+      <!-- Recipe 5: Bhel -->
+      <div class="recipe-card" data-recipe-category="street">
+        <div class="recipe-header">
+          <span class="recipe-product-badge">Uses: Mix Namkeen</span>
+          <span class="recipe-time">⏱️ 5 Mins</span>
+        </div>
+        <h3 class="recipe-title">Pantry Chavanu Bhel</h3>
+        <p class="recipe-desc">Sweet, sour, and crunchy bhel made by tossing puffed rice with raw tomatoes, lemon, and sweet-sour Chavanu.</p>
+        <div class="recipe-ingredients-brief">
+          <strong>Key Ingredients:</strong> Mix Namkeen, puffed rice (kurmura), chopped tomato, onion, lemon juice.
+        </div>
+        <div class="recipe-directions-accordion">
+          <ol class="recipe-steps-list">
+            <li>Mix equal parts puffed rice and Sonalben Mix Namkeen in a large bowl.</li>
+            <li>Add chopped tomatoes, raw onions, and chopped coriander leaves.</li>
+            <li>Drizzle 1 tablespoon of raw green mango syrup and fresh lemon juice.</li>
+            <li>Toss together rapidly and serve in paper cones for the authentic street experience.</li>
+          </ol>
+        </div>
+        <button class="btn-toggle-recipe">View Full Recipe →</button>
+      </div>
+
+      <!-- Recipe 6: Thepla Wrap -->
+      <div class="recipe-card" data-recipe-category="quick">
+        <div class="recipe-header">
+          <span class="recipe-product-badge">Uses: Fresh Thepla</span>
+          <span class="recipe-time">⏱️ 5 Mins</span>
+        </div>
+        <h3 class="recipe-title">Thepla Veggie Wrap</h3>
+        <p class="recipe-desc">The ultimate travel wrap. Spread sweet mango pickle inside soft fresh methi theplas and roll with raw cucumber slices.</p>
+        <div class="recipe-ingredients-brief">
+          <strong>Key Ingredients:</strong> Thepla, mango pickle, cucumber strips, mint leaves.
+        </div>
+        <div class="recipe-directions-accordion">
+          <ol class="recipe-steps-list">
+            <li>Warm up the methi thepla slightly on a pan.</li>
+            <li>Spread a thin layer of Sonalben Spicy Mango Pickle gravy.</li>
+            <li>Place fresh cucumber sticks and fresh mint leaves in the center.</li>
+            <li>Roll up tightly in a foil wrapper. Perfect for lunch boxes and road trips.</li>
+          </ol>
+        </div>
+        <button class="btn-toggle-recipe">View Full Recipe →</button>
+      </div>
+
+      <!-- Recipe 7: Cheese Khakhra Pizza -->
+      <div class="recipe-card" data-recipe-category="fusion">
+        <div class="recipe-header">
+          <span class="recipe-product-badge">Uses: Methi Khakhra</span>
+          <span class="recipe-time">⏱️ 10 Mins</span>
+        </div>
+        <h3 class="recipe-title">Cheese Khakhra Pizza</h3>
+        <p class="recipe-desc">Crunchy whole wheat pizza. Methi khakhra base topped with tomato reduction, sweet corn, paneer, and lots of mozzarella.</p>
+        <div class="recipe-ingredients-brief">
+          <strong>Key Ingredients:</strong> Methi Khakhra, pizza reduction, sweet corn, paneer, grated mozzarella.
+        </div>
+        <div class="recipe-directions-accordion">
+          <ol class="recipe-steps-list">
+            <li>Take one crisp Methi Khakhra.</li>
+            <li>Brush lightly with olive oil or butter, then apply a layer of pizza sauce.</li>
+            <li>Top with sweet corn kernels, diced bell peppers, and paneer cubes.</li>
+            <li>Sprinkle mozzarella cheese and cook on a low pan covered with a lid until cheese melts.</li>
+          </ol>
+        </div>
+        <button class="btn-toggle-recipe">View Full Recipe →</button>
+      </div>
+
+      <!-- Recipe 8: Papdi Chaat -->
+      <div class="recipe-card" data-recipe-category="street">
+        <div class="recipe-header">
+          <span class="recipe-product-badge">Uses: Papad & Sev</span>
+          <span class="recipe-time">⏱️ 10 Mins</span>
+        </div>
+        <h3 class="recipe-title">Deconstructed Papdi Chaat</h3>
+        <p class="recipe-desc">Flat besan papdi layered with sweetened yogurt, green chili chutney, boiled potatoes, and coarse papad sprinkles.</p>
+        <div class="recipe-ingredients-brief">
+          <strong>Key Ingredients:</strong> Flat papdis, sweet curd, potatoes, raw mango, spicy sev.
+        </div>
+        <div class="recipe-directions-accordion">
+          <ol class="recipe-steps-list">
+            <li>Arrange papdi biscuits flat on a plate.</li>
+            <li>Top each with mashed potatoes and chilled sweetened yogurt.</li>
+            <li>Drizzle green chili and sweet date chutneys.</li>
+            <li>Garnish with raw mango pieces, chili powder, and fine sev.</li>
+          </ol>
+        </div>
+        <button class="btn-toggle-recipe">View Full Recipe →</button>
+      </div>
+
+      <!-- Recipe 9: Farsan Chaat -->
+      <div class="recipe-card" data-recipe-category="street">
+        <div class="recipe-header">
+          <span class="recipe-product-badge">Uses: Gathiya & Sev</span>
+          <span class="recipe-time">⏱️ 5 Mins</span>
+        </div>
+        <h3 class="recipe-title">Instant Farsan Chaat</h3>
+        <p class="recipe-desc">A quick dry mixture. Toss Bhavnagari Gathiya and plain sev with roasted peanuts, rock salt, coriander, and fresh lemon.</p>
+        <div class="recipe-ingredients-brief">
+          <strong>Key Ingredients:</strong> Gathiya, plain sev, peanuts, chopped coriander, lemon juice.
+        </div>
+        <div class="recipe-directions-accordion">
+          <ol class="recipe-steps-list">
+            <li>Mix 1 cup Gathiya and 1/2 cup plain sev in a bowl.</li>
+            <li>Toss in dry roasted peanuts and fine chopped green chilies.</li>
+            <li>Squeeze fresh lemon juice over the mixture and toss.</li>
+            <li>Garnish with fresh coriander and serve immediately with hot ginger chai.</li>
+          </ol>
+        </div>
+        <button class="btn-toggle-recipe">View Full Recipe →</button>
+      </div>
+
+      <!-- Recipe 10: Tea Time Snack Ideas -->
+      <div class="recipe-card" data-recipe-category="quick">
+        <div class="recipe-header">
+          <span class="recipe-product-badge">Uses: All Pantry</span>
+          <span class="recipe-time">⏱️ 5 Mins</span>
+        </div>
+        <h3 class="recipe-title">Traditional Tea Platters</h3>
+        <p class="recipe-desc">Our suggestions for organizing the ultimate Gujarati high-tea. Arranging combinations of sweet and savory snacks.</p>
+        <div class="recipe-ingredients-brief">
+          <strong>Key Ingredients:</strong> Methi Khakhra, Gathiya, Jalebi, hot ginger tea.
+        </div>
+        <div class="recipe-directions-accordion">
+          <ol class="recipe-steps-list">
+            <li>Prepare a classic cup of Masala Ginger Chai.</li>
+            <li>Arrange 4 slices of Methi Khakhra on the left of a wooden platter.</li>
+            <li>Fill a small bowl with Bhavnagari Gathiya and fried green chilies.</li>
+            <li>Place a few fresh jalebis in the center to balance the savory bite with sweet syrup.</li>
+          </ol>
+        </div>
+        <button class="btn-toggle-recipe">View Full Recipe →</button>
+      </div>
+
+      <!-- Recipe 11: Travel Snack Ideas -->
+      <div class="recipe-card" data-recipe-category="quick">
+        <div class="recipe-header">
+          <span class="recipe-product-badge">Uses: Jeera Khakhra</span>
+          <span class="recipe-time">⏱️ 5 Mins</span>
+        </div>
+        <h3 class="recipe-title">Travel Snack Packs</h3>
+        <p class="recipe-desc">Pack mess-free Jeera Khakhra sandwiches wrapped in butter paper, accompanied by dry salted peanuts.</p>
+        <div class="recipe-ingredients-brief">
+          <strong>Key Ingredients:</strong> Jeera Khakhra, butter, dry peanuts, mango pickle pouch.
+        </div>
+        <div class="recipe-directions-accordion">
+          <ol class="recipe-steps-list">
+            <li>Butter the inner faces of two Jeera Khakhras lightly.</li>
+            <li>Press them together to form a dry, mess-free sandwich.</li>
+            <li>Wrap securely in butter paper to prevent any breakages.</li>
+            <li>Pack with single-serve pouches of mango pickle for easy dipping on train or car trips.</li>
+          </ol>
+        </div>
+        <button class="btn-toggle-recipe">View Full Recipe →</button>
+      </div>
+
+      <!-- Recipe 12: Lunch Box Ideas -->
+      <div class="recipe-card" data-recipe-category="quick">
+        <div class="recipe-header">
+          <span class="recipe-product-badge">Uses: Diet Khakhra</span>
+          <span class="recipe-time">⏱️ 8 Mins</span>
+        </div>
+        <h3 class="recipe-title">Kids Tiffin Combos</h3>
+        <p class="recipe-desc">Assemble a healthy lunch box with crumbled diet khakhra bowls, sweet raisins, and a small container of mango jam.</p>
+        <div class="recipe-ingredients-brief">
+          <strong>Key Ingredients:</strong> Diet Khakhra, raisins, fresh jam or curd, sweet makhana.
+        </div>
+        <div class="recipe-directions-accordion">
+          <ol class="recipe-steps-list">
+            <li>Break Diet Khakhras into small, bite-sized crackers.</li>
+            <li>Pack alongside a small spill-proof cup of sweet yogurt or fruit jam.</li>
+            <li>Fill the second compartment with golden raisins and roasted sweet makhana.</li>
+            <li>Provides a dry, clean, healthy, and high-fiber recess treat for school kids.</li>
+          </ol>
+        </div>
+        <button class="btn-toggle-recipe">View Full Recipe →</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DEDICATED FESTIVAL EXPERIENCE SECTION (9 Celebrations) -->
+  <section class="festivals-section" id="festivals">
+    <div class="section-header">
+      <span class="section-tag">Celebrations</span>
+      <h2>Festival Favorites</h2>
+      <p>Gujarati culture revolves around joy, color, and heritage snacks</p>
+    </div>
+    <div class="festival-grid">
+      
+      <!-- Diwali -->
+      <div class="festival-card">
+        <div class="festival-visual fv-diwali">
+          <img src="assets/images/festival_diwali.png" alt="Diwali">
+        </div>
+        <div class="festival-info">
+          <h3 class="festival-name">Diwali Dhamaka</h3>
+          <p class="festival-desc">Illuminate celebrations with our premium gift boxes and dry snack platters for family visits.</p>
+          <div class="festival-products">
+            <span class="festival-product-tag">Celebration Box</span>
+            <span class="festival-product-tag">Methi Khakhra</span>
+            <span class="festival-product-tag">Chavanu</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navratri -->
+      <div class="festival-card">
+        <div class="festival-visual fv-navratri">💃</div>
+        <div class="festival-info">
+          <h3 class="festival-name">Navratri Garba Nights</h3>
+          <p class="festival-desc">Fuel your nine nights of dancing and celebration with light, energizing, easy-to-carry snacks.</p>
+          <div class="festival-products">
+            <span class="festival-product-tag">Diet Khakhra</span>
+            <span class="festival-product-tag">Plain Gathiya</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Uttarayan -->
+      <div class="festival-card">
+        <div class="festival-visual fv-uttarayan">🪁</div>
+        <div class="festival-info">
+          <h3 class="festival-name">Uttarayan (Kite Festival)</h3>
+          <p class="festival-desc">Terrace parties aren't complete without a plate of hot, crispy fafda and sweet sesame chikki.</p>
+          <div class="festival-products">
+            <span class="festival-product-tag">Traditional Fafda</span>
+            <span class="festival-product-tag">Jeera Khakhra</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Janmashtami -->
+      <div class="festival-card">
+        <div class="festival-visual fv-janmashtami">🏺</div>
+        <div class="festival-info">
+          <h3 class="festival-name">Janmashtami</h3>
+          <p class="festival-desc">Celebrate Bappa with sweet mathri and standard plain khakhra butter pairings.</p>
+          <div class="festival-products">
+            <span class="festival-product-tag">Plain Khakhra</span>
+            <span class="festival-product-tag">Sweet Mathri</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Raksha Bandhan -->
+      <div class="festival-card">
+        <div class="festival-visual fv-rakhi">🤝</div>
+        <div class="festival-info">
+          <h3 class="festival-name">Raksha Bandhan</h3>
+          <p class="festival-desc">Honor the bond of siblings with our premium customized sweet and savory boxes.</p>
+          <div class="festival-products">
+            <span class="festival-product-tag">Custom Hampers</span>
+            <span class="festival-product-tag">Dry Fruit Packs</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Holi -->
+      <div class="festival-card">
+        <div class="festival-visual fv-holi">🎨</div>
+        <div class="festival-info">
+          <h3 class="festival-name">Holi Festival</h3>
+          <p class="festival-desc">Vibrant colors, thandai, and hot spicy snacks like Ratlami Sev and Masala Khakhra.</p>
+          <div class="festival-products">
+            <span class="festival-product-tag">Ratlami Sev</span>
+            <span class="festival-product-tag">Masala Khakhra</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ganesh Chaturthi -->
+      <div class="festival-card">
+        <div class="festival-visual fv-ganesha">🐘</div>
+        <div class="festival-info">
+          <h3 class="festival-name">Ganesh Chaturthi</h3>
+          <p class="festival-desc">Welcome Bappa with sweet modak pairs and crispy roasted light papads.</p>
+          <div class="festival-products">
+            <span class="festival-product-tag">Papad Collection</span>
+            <span class="festival-product-tag">Sweets Pack</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wedding Celebrations -->
+      <div class="festival-card">
+        <div class="festival-visual fv-wedding">💒</div>
+        <div class="festival-info">
+          <h3 class="festival-name">Wedding Celebrations</h3>
+          <p class="festival-desc">Customized luxury welcoming gift box setups for your marriage guests in hotel rooms.</p>
+          <div class="festival-products">
+            <span class="festival-product-tag">Welcome Baskets</span>
+            <span class="festival-product-tag">Return Gifts</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Corporate Gifting -->
+      <div class="festival-card">
+        <div class="festival-visual fv-corporate">💼</div>
+        <div class="festival-info">
+          <h3 class="festival-name">Corporate Gifting</h3>
+          <p class="festival-desc">Sleek, premium packages designed for corporate partners, clients, and employees.</p>
+          <div class="festival-products">
+            <span class="festival-product-tag">Signature Boxes</span>
+            <span class="festival-product-tag">Custom Branding</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- GENERATIONS & MEMORIES (Polaroid Photo Grid) -->
+  <section class="family-moments-section" id="moments">
+    <div class="section-header">
+      <span class="section-tag">Memories</span>
+      <h2>Part of Your Family</h2>
+      <p>Creating warm moments around the tea table for over three decades</p>
+    </div>
+    
+    <div class="container">
+      <div class="moments-grid">
+        
+        <div class="moment-scrapbook-card">
+          <img src="assets/images/family_teatime.png" alt="Family snacking together">
+          <div class="moment-caption">Evening Chai & Stories</div>
+        </div>
+
+        <div class="moment-scrapbook-card">
+          <img src="assets/images/festival_hamper.png" alt="Travel companion packing">
+          <div class="moment-caption">Packed for long journeys</div>
+        </div>
+
+        <div class="moment-scrapbook-card">
+          <img src="assets/images/festival_diwali.png" alt="Wedding Gifting">
+          <div class="moment-caption">Welcoming guests home</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="footer-border patola-border"></div>
+    
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-brand-logo">
+            <div class="footer-brand-icon">SK</div>
+            <span class="footer-brand-name">Sonalben Khakhrawala</span>
+          </div>
+          <div class="footer-brand-gujarati">સોનલબેન ખાખરાવાળા</div>
+          <p>Handcrafting authentic Gujarati dry snacks since 1990. Rooted in family traditions, slow flame roasting, and raw ground spices.</p>
+          <div class="footer-newsletter">
+            <div class="footer-newsletter-form">
+              <input type="email" placeholder="Email for family recipes" aria-label="Email Address">
+              <button type="button">Subscribe</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#pantry">The Pantry Shelf</a></li>
+            <li><a href="#cookbook">Family Cookbook</a></li>
+            <li><a href="#festivals">Festival Hub</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="#pantry">Khakhra</a></li>
+            <li><a href="#pantry">Sev & Namkeen</a></li>
+            <li><a href="#pantry">Pickles & Papad</a></li>
+            <li><a href="#pantry">Gift Boxes</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Pantry Help</h4>
+          <ul>
+            <li><a href="#">Store Counter Locator</a></li>
+            <li><a href="#">Bulk Wedding Inquiry</a></li>
+            <li><a href="#">Contact Family Kitchen</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Chat">💬</a>
+        </div>
+        <p class="footer-copyright">&copy; 2026 Sonalben Khakhrawala. All rights reserved.</p>
+        <p class="footer-tagline">Made with <span class="heart">❤️</span> in Ahmedabad, Gujarat</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
