@@ -7,53 +7,31 @@
 
 /* ── Design Tokens ──────────────────────────────────────────── */
 :root {
-  /* 55% Background Paper Tones - Lavender White & White */
-  --lavender-white: #F4F5FC; /* whiter, less saturated lavender */
-  --lavender-white-light: #FAF9FF;
-  --lavender-white-dark: #E2E4F6;
-  --white: #FFFFFF;
+  --brand-gold: #F0B429;
+  --brand-gold-light: #F7D070;
+  --brand-gold-dark: #CB8B15;
+  --saffron: #E8732A;
+  --saffron-light: #F09D5C;
+  --saffron-dark: #C25A15;
+  --turmeric: #F4C430;
+  --chili-red: #C62828;
+  --pomegranate: #8B1A1A;
+  --royal-maroon: #6B1D3A;
   
-  /* 20% Primary Theme Color - Indigo */
-  --indigo: #4848E0;
-  --indigo-light: #7979FA;
-  --indigo-dark: #2C2CBA;
-  
-  /* 10% Typography & Base Dark Color - Deep Maroon */
-  --ink: #39292A;
-  --ink-light: #4E3B3C;
-  
-  /* 10% Secondary Text / Borders / Accents - Brown */
-  --ink-muted: #896643;
-  --ink-subtle: #A88765;
-  --border-sepia: rgba(137, 102, 67, 0.25);
-  
-  /* 5% Secondary Accent Color - Gold */
-  --brand-gold: #FFC61A;
-  --brand-gold-light: #FFE066;
-  --brand-gold-dark: #CC9E14;
-  
-  /* Red - ONLY for buttons, sale badges, active filters, important highlights */
-  --red: #CC0324;
-  --red-hover: #A3021D;
-
-  /* Aliasing old variables to new variables to maintain site cohesiveness */
-  --saffron: var(--indigo);
-  --saffron-light: var(--indigo-light);
-  --saffron-dark: var(--indigo-dark);
-  
-  --turmeric: var(--brand-gold);
-  --chili-red: var(--red);
-  --pomegranate: var(--red);
-  --royal-maroon: var(--ink);
-  
-  /* Mapping Paper Tones to Lavender White and White */
-  --cream: var(--lavender-white);
-  --cream-dark: var(--lavender-white-dark);
-  --warm-beige: var(--lavender-white);
-  --warm-beige-dark: var(--lavender-white-dark);
-  --parchment: var(--white);
-  --parchment-dark: var(--lavender-white-dark);
+  /* Paper Tones */
+  --cream: #FFF8E7;
+  --cream-dark: #F5EDDA;
+  --warm-beige: #F5E6D3;
+  --warm-beige-dark: #E8D5BC;
+  --parchment: #FAF6F0;
+  --parchment-dark: #EDE5D8;
   --postit-yellow: #FEF9D9;
+  
+  /* Ink & Typography */
+  --ink: #1A0F0A;
+  --ink-light: #3D2B1F;
+  --ink-muted: #6B5744;
+  --ink-subtle: #9C8B7A;
 
   /* Typography Fonts */
   --font-display: 'Playfair Display', Georgia, serif;
@@ -179,15 +157,15 @@ ul { list-style: none; }
 }
 
 .btn-primary {
-  background: var(--red);
+  background: var(--saffron);
   color: white;
-  box-shadow: 0 4px 15px rgba(204, 3, 36, 0.3);
+  box-shadow: 0 4px 15px rgba(232,115,42,0.3);
 }
 .btn-primary:hover {
-  background: var(--red-hover);
+  background: var(--ink-light);
   color: white;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(204, 3, 36, 0.45);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
 }
 
 .btn-ghost {
@@ -308,9 +286,8 @@ ul { list-style: none; }
   right: 0;
   z-index: 100;
   padding: 0.45rem 0;
-  background: rgba(255, 255, 255, 0.95);
-  border-bottom: 1px solid rgba(72, 72, 224, 0.12);
-  box-shadow: 0 2px 12px rgba(72, 72, 224, 0.04);
+  background: rgba(255, 248, 231, 0.95);
+  border-bottom: 1px solid var(--border-sepia);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   transition: padding 0.3s;
@@ -565,7 +542,57 @@ ul { list-style: none; }
   50% { transform: translate(-50%, -6px); }
 }
 
+/* ── Subtle Floating Real Product Mockups ── */
+.floating-foods {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
 
+.food-img, .sketch-img {
+  position: absolute;
+  filter: drop-shadow(0 8px 20px rgba(0,0,0,0.4));
+  transition: transform 0.1s ease-out;
+}
+
+.food-img {
+  width: clamp(75px, 8vw, 120px);
+  height: auto;
+}
+
+.sketch-img {
+  width: clamp(60px, 6vw, 90px);
+  height: auto;
+  color: var(--brand-gold-light);
+  opacity: 0.18;
+}
+
+/* Set positioning layout for floating elements */
+.food-img--jeera { top: 10%; left: 5%; }
+.food-img--fafda { top: 12%; right: 7%; width: clamp(90px, 10vw, 140px); }
+.food-img--gathiya { top: 52%; left: 4%; }
+.food-img--sev { top: 62%; right: 4%; }
+.food-img--masala { top: 22%; left: 82%; }
+.food-img--pickle { top: 76%; left: 14%; width: clamp(60px, 6vw, 85px); }
+.food-img--namkeen { top: 70%; right: 20%; width: clamp(80px, 8vw, 110px); }
+
+.sketch-img--belan { top: 38%; left: 6%; transform: rotate(15deg); }
+.sketch-img--chah { top: 40%; right: 8%; transform: rotate(-10deg); }
+
+@keyframes float-food {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(3deg); }
+}
+.food-img--jeera { animation: float-food 6s ease-in-out infinite; }
+.food-img--fafda { animation: float-food 7s ease-in-out 0.8s infinite; }
+.food-img--gathiya { animation: float-food 5.5s ease-in-out 1.6s infinite; }
+.food-img--sev { animation: float-food 6.5s ease-in-out 0.4s infinite; }
+.food-img--masala { animation: float-food 7.5s ease-in-out 1.2s infinite; }
+.food-img--pickle { animation: float-food 6s ease-in-out 2s infinite; }
+.food-img--namkeen { animation: float-food 5s ease-in-out 0.6s infinite; }
+.sketch-img--belan { animation: float-food 8s ease-in-out infinite; }
+.sketch-img--chah { animation: float-food 9s ease-in-out 1s infinite; }
 
 /* ============================================================
    SCRAPBOOK JOURNEY (The Family Album Story)
@@ -777,9 +804,9 @@ ul { list-style: none; }
   transition: all 0.3s;
 }
 .filter-btn:hover, .filter-btn.is-active {
-  background: var(--red);
+  background: var(--saffron);
   color: white;
-  border-color: var(--red);
+  border-color: var(--saffron);
   transform: translateY(-1.5px);
 }
 
@@ -831,7 +858,7 @@ ul { list-style: none; }
   position: absolute;
   top: 10px;
   left: 10px;
-  background: var(--indigo);
+  background: var(--saffron);
   color: white;
   font-size: 9px;
   font-weight: 700;
@@ -841,14 +868,14 @@ ul { list-style: none; }
   z-index: 2;
   letter-spacing: 0.05em;
 }
-.badge-favorite { background: var(--red); }
-.badge-spicy { background: var(--red); }
+.badge-favorite { background: var(--pomegranate); }
+.badge-spicy { background: var(--chili-red); }
 
 /* Ingredient Hover panel */
 .product-ingredients-hover {
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 248, 231, 0.95);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -965,7 +992,7 @@ ul { list-style: none; }
   width: 36px;
   height: 36px;
   border-radius: var(--radius-full);
-  background: var(--red);
+  background: var(--saffron);
   color: white;
   display: flex;
   align-items: center;
@@ -974,7 +1001,7 @@ ul { list-style: none; }
   box-shadow: var(--shadow-sm);
 }
 .add-to-cart:hover {
-  background: var(--red-hover);
+  background: var(--ink-light);
   transform: scale(1.06);
 }
 .add-to-cart svg {
@@ -1015,9 +1042,9 @@ ul { list-style: none; }
   transition: all 0.3s;
 }
 .recipe-filter-btn:hover, .recipe-filter-btn.is-active {
-  background: var(--red);
+  background: var(--saffron-dark);
   color: white;
-  border-color: var(--red);
+  border-color: var(--saffron-dark);
   transform: translateY(-1.5px);
 }
 
@@ -1063,7 +1090,7 @@ ul { list-style: none; }
 }
 
 .recipe-card-front {
-  background: var(--parchment) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='24'%3E%3Cline x1='0' y1='23' x2='100%25' y2='23' stroke='rgba(72,72,224,0.06)' stroke-width='1.5'/%3E%3C/svg%3E") repeat;
+  background: var(--parchment) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='24'%3E%3Cline x1='0' y1='23' x2='100%25' y2='23' stroke='rgba(232,115,42,0.06)' stroke-width='1.5'/%3E%3C/svg%3E") repeat;
   z-index: 2;
 }
 
@@ -1078,12 +1105,12 @@ ul { list-style: none; }
 }
 
 .recipe-card-back {
-  background: var(--white);
+  background: var(--cream);
   transform: rotateY(180deg);
   z-index: 1;
   justify-content: center;
   gap: 1.5rem;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='28'%3E%3Cline x1='0' y1='27' x2='100%25' y2='27' stroke='rgba(72,72,224,0.08)' stroke-width='1'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='28'%3E%3Cline x1='0' y1='27' x2='100%25' y2='27' stroke='rgba(194,90,21,0.08)' stroke-width='1'/%3E%3C/svg%3E");
   background-repeat: repeat;
 }
 

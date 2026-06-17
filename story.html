@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Our Story — Sonalben Khakhrawala. Traditional handcrafted Gujarati snacks. Taste the family heritage in every crunch.">
+  <title>Our Story — Sonalben Khakhrawala</title>
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23C25A15'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='Georgia' font-weight='800' font-size='14' fill='%23FFFBF5'%3ESK%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <!-- LOADING SCREEN -->
+  <div class="loading-screen" id="loader">
+    <div class="loading-spinner">
+      <div class="loading-khakhra"></div>
+    </div>
+    <div class="loading-brand">SONALBEN</div>
+    <div class="loading-tagline">Taste the Family Heritage</div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="main-nav" id="main-nav">
+    <div class="nav-container">
+      <a class="nav-logo" id="nav-logo-btn" href="index.html" aria-label="Go to home">
+        <img src="assets/images/sonalben_logo.png" alt="Sonalben Khakhrawala Logo" class="nav-logo-img">
+        <div class="nav-logo-text">
+          <span class="nav-logo-brand">Sonalben</span>
+          <span class="nav-logo-sub">Khakhrawala</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="story.html" class="is-active" style="color: var(--red);">Our Story</a></li>
+        <li><a href="index.html#pantry">The Pantry</a></li>
+        <li><a href="index.html#cookbook">Family Cookbook</a></li>
+        <li><a href="index.html#moments">Memories</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-cart" aria-label="Cart">
+          <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="nav-cart-count">0</span>
+        </button>
+        <button class="nav-menu-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SCRAPBOOK TIMELINE (The Family Album) -->
+  <section class="story-section" id="story" style="padding-top: 8rem;">
+    <span class="gujarati-accent-script">અમારી સફર</span>
+    <div class="section-header">
+      <span class="section-tag">Our Scrapbook</span>
+      <h2>A Family Built on Crunch</h2>
+      <p>Discover our family album and the steps that shaped Sonalben Khakhrawala</p>
+    </div>
+
+    <div class="scrapbook-timeline">
+      <div class="scrapbook-stitched-seam"></div>
+      
+      <!-- Milestone 1 -->
+      <div class="scrapbook-milestone">
+        <div class="milestone-pin"></div>
+        <div class="milestone-visual">
+          <div class="scrapbook-polaroid-card">
+            <img src="assets/images/khakhra_stack.png" alt="Sonalben's small kitchen">
+            <div class="polaroid-script">Wooden rolling pin, 1990</div>
+            <div class="postit-note milestone-1-postit">First Batch!</div>
+          </div>
+        </div>
+        <div class="milestone-content">
+          <span class="milestone-year">1990</span>
+          <h3>A Small Home Kitchen</h3>
+          <p>Sonalben started in her cozy home kitchen, rolling thin whole wheat discs on a simple wooden board. Roasting them over a slow flame, she served neighbors who immediately loved the clean, crispy texture.</p>
+        </div>
+      </div>
+
+      <!-- Milestone 2 -->
+      <div class="scrapbook-milestone">
+        <div class="milestone-pin"></div>
+        <div class="milestone-visual">
+          <div class="scrapbook-polaroid-card">
+            <img src="assets/images/spice_ingredients.png" alt="Handmade batches">
+            <div class="polaroid-script">Iron pan roasting</div>
+          </div>
+        </div>
+        <div class="milestone-content">
+          <span class="milestone-year">1993</span>
+          <h3>First Handmade Batches</h3>
+          <p>As orders grew, the family came together to stone-grind local spices like cumin and fenugreek. Pressing and roasting each batch by hand on heavy iron griddles to maintain the homemade goodness.</p>
+        </div>
+      </div>
+
+      <!-- Milestone 3 -->
+      <div class="scrapbook-milestone">
+        <div class="milestone-pin"></div>
+        <div class="milestone-visual">
+          <div class="scrapbook-polaroid-card">
+            <img src="assets/images/food_collection.png" alt="Bicycle delivery">
+            <div class="polaroid-script">Bicycle deliveries</div>
+            <div class="postit-note milestone-3-postit">Pure Wheat 🌾</div>
+          </div>
+        </div>
+        <div class="milestone-content">
+          <span class="milestone-year">1997</span>
+          <h3>Early Local Customers</h3>
+          <p>Neighborhood tea stalls and local stores began ordering daily stacks. The family packed the fresh snacks in simple craft bags, delivering them on bicycles. Trust grew, one daily bite at a time.</p>
+        </div>
+      </div>
+
+      <!-- Milestone 4 -->
+      <div class="scrapbook-milestone">
+        <div class="milestone-pin"></div>
+        <div class="milestone-visual">
+          <div class="scrapbook-polaroid-card">
+            <img src="assets/images/family_teatime.png" alt="First store awning">
+            <div class="polaroid-script">First Store, Ahmedabad</div>
+          </div>
+        </div>
+        <div class="milestone-content">
+          <span class="milestone-year">2005</span>
+          <h3>Growing Trust in Ahmedabad</h3>
+          <p>We raised our first commercial retail awning in Ahmedabad. The city embraced Sonalben's fresh, hand-roasted khakhras as the ultimate companion to hot afternoon ginger tea.</p>
+        </div>
+      </div>
+
+      <!-- Milestone 5 -->
+      <div class="scrapbook-milestone">
+        <div class="milestone-pin"></div>
+        <div class="milestone-visual">
+          <div class="scrapbook-polaroid-card">
+            <img src="assets/images/festival_hamper.png" alt="Store expansion">
+            <div class="polaroid-script">Traditional expansion</div>
+          </div>
+        </div>
+        <div class="milestone-content">
+          <span class="milestone-year">2012</span>
+          <h3>Opening Dedicated Stores</h3>
+          <p>We expanded to dedicated branches across different sectors of the city. We added fresh, crispy Fafda, melt-in-mouth Gathiya, and spicy Sev, staying true to our core family kitchen standards.</p>
+        </div>
+      </div>
+
+      <!-- Milestone 6 -->
+      <div class="scrapbook-milestone">
+        <div class="milestone-pin"></div>
+        <div class="milestone-visual">
+          <div class="scrapbook-polaroid-card">
+            <img src="assets/images/festival_diwali.png" alt="Diwali hampers">
+            <div class="polaroid-script">Celebrating family</div>
+            <div class="postit-note milestone-6-postit">For Bappa 🪔</div>
+          </div>
+        </div>
+        <div class="milestone-content">
+          <span class="milestone-year">2018</span>
+          <h3>Serving Generations of Families</h3>
+          <p>Sonalben's snacks became a staple of daily life, marriage hampers, and school recesses. Children who once ate our bicycle snacks now bring their own kids to our storefronts.</p>
+        </div>
+      </div>
+
+      <!-- Milestone 7 -->
+      <div class="scrapbook-milestone">
+        <div class="milestone-pin"></div>
+        <div class="milestone-visual">
+          <div class="scrapbook-polaroid-card">
+            <img src="assets/images/hero_kitchen.png" alt="Sonalben Khakhrawala today">
+            <div class="polaroid-script">Ahmedabad, Today</div>
+          </div>
+        </div>
+        <div class="milestone-content">
+          <span class="milestone-year">Today</span>
+          <h3>Modern Sonalben Today</h3>
+          <p>While Sonalben now exports domestic and international packages, our core process remains unchanged. Every khakhra is still hand-pressed, roasted, and packed with the same family warmth we started with in 1990.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="main-footer">
+    <div class="footer-border patola-border"></div>
+    
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-brand-logo">
+            <div class="footer-brand-icon">SK</div>
+            <span class="footer-brand-name">Sonalben Khakhrawala</span>
+          </div>
+          <div class="footer-brand-gujarati">સોનલબેન ખાખરાવાળા</div>
+          <p>Handcrafting authentic Gujarati dry snacks since 1990. Rooted in family traditions, slow flame roasting, and raw ground spices.</p>
+          <div class="footer-newsletter">
+            <div class="footer-newsletter-form">
+              <input type="email" placeholder="Email for family recipes" aria-label="Email Address">
+              <button type="button">Subscribe</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="story.html">Our Story</a></li>
+            <li><a href="index.html#pantry">The Pantry Shelf</a></li>
+            <li><a href="index.html#cookbook">Family Cookbook</a></li>
+            <li><a href="index.html#festivals">Festival Hub</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Products</h4>
+          <ul>
+            <li><a href="index.html#pantry">Khakhra</a></li>
+            <li><a href="index.html#pantry">Sev & Namkeen</a></li>
+            <li><a href="index.html#pantry">Pickles & Papad</a></li>
+            <li><a href="index.html#pantry">Gift Boxes</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Pantry Help</h4>
+          <ul>
+            <li><a href="#">Store Counter Locator</a></li>
+            <li><a href="#">Bulk Wedding Inquiry</a></li>
+            <li><a href="#">Contact Family Kitchen</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Chat">💬</a>
+        </div>
+        <p class="footer-copyright">&copy; 2026 Sonalben Khakhrawala. All rights reserved.</p>
+        <p class="footer-tagline">Made with <span class="heart">❤️</span> in Ahmedabad, Gujarat</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
