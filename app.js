@@ -60,10 +60,10 @@ function initNavigation() {
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
       nav.style.padding = '0.3rem 0';
-      nav.style.boxShadow = '0 4px 20px rgba(46,37,32,0.06)';
+      nav.style.boxShadow = '0 4px 20px rgba(72, 72, 224, 0.08)';
     } else {
       nav.style.padding = '0.45rem 0';
-      nav.style.boxShadow = 'none';
+      nav.style.boxShadow = '0 2px 12px rgba(72, 72, 224, 0.04)';
     }
   }, { passive: true });
 

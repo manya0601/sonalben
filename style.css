@@ -8,9 +8,9 @@
 /* ── Design Tokens ──────────────────────────────────────────── */
 :root {
   /* 55% Background Paper Tones - Lavender White & White */
-  --lavender-white: #EBECFF;
-  --lavender-white-light: #F7F8FF;
-  --lavender-white-dark: #DFE1FF;
+  --lavender-white: #F4F5FC; /* whiter, less saturated lavender */
+  --lavender-white-light: #FAF9FF;
+  --lavender-white-dark: #E2E4F6;
   --white: #FFFFFF;
   
   /* 20% Primary Theme Color - Indigo */
@@ -308,8 +308,9 @@ ul { list-style: none; }
   right: 0;
   z-index: 100;
   padding: 0.45rem 0;
-  background: rgba(235, 236, 255, 0.95);
-  border-bottom: 1px solid var(--border-sepia);
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(72, 72, 224, 0.12);
+  box-shadow: 0 2px 12px rgba(72, 72, 224, 0.04);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   transition: padding 0.3s;
@@ -847,7 +848,7 @@ ul { list-style: none; }
 .product-ingredients-hover {
   position: absolute;
   inset: 0;
-  background: rgba(255, 248, 231, 0.95);
+  background: rgba(255, 255, 255, 0.95);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1062,7 +1063,7 @@ ul { list-style: none; }
 }
 
 .recipe-card-front {
-  background: var(--parchment) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='24'%3E%3Cline x1='0' y1='23' x2='100%25' y2='23' stroke='rgba(232,115,42,0.06)' stroke-width='1.5'/%3E%3C/svg%3E") repeat;
+  background: var(--parchment) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='24'%3E%3Cline x1='0' y1='23' x2='100%25' y2='23' stroke='rgba(72,72,224,0.06)' stroke-width='1.5'/%3E%3C/svg%3E") repeat;
   z-index: 2;
 }
 
@@ -1077,12 +1078,12 @@ ul { list-style: none; }
 }
 
 .recipe-card-back {
-  background: var(--cream);
+  background: var(--white);
   transform: rotateY(180deg);
   z-index: 1;
   justify-content: center;
   gap: 1.5rem;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='28'%3E%3Cline x1='0' y1='27' x2='100%25' y2='27' stroke='rgba(194,90,21,0.08)' stroke-width='1'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='28'%3E%3Cline x1='0' y1='27' x2='100%25' y2='27' stroke='rgba(72,72,224,0.08)' stroke-width='1'/%3E%3C/svg%3E");
   background-repeat: repeat;
 }
 
