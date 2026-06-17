@@ -27,13 +27,13 @@
   <!-- NAVIGATION -->
   <nav class="main-nav" id="main-nav">
     <div class="nav-container">
-      <a href="#" class="nav-logo">
-        <div class="nav-logo-icon">SK</div>
+      <button class="nav-logo" id="nav-logo-btn" aria-label="Go to top">
+        <img src="assets/images/sonalben_logo.png" alt="Sonalben Khakhrawala Logo" class="nav-logo-img">
         <div class="nav-logo-text">
           <span class="nav-logo-brand">Sonalben</span>
           <span class="nav-logo-sub">Khakhrawala</span>
         </div>
-      </a>
+      </button>
       <ul class="nav-links" id="nav-links">
         <li><a href="#story">Our Story</a></li>
         <li><a href="#pantry">The Pantry</a></li>
@@ -760,266 +760,338 @@
       
       <!-- Recipe 1: Pizza Thepla -->
       <div class="recipe-card" data-recipe-category="fusion">
-        <div class="recipe-header">
-          <span class="recipe-product-badge">Uses: Fresh Thepla</span>
-          <span class="recipe-time">⏱️ 15 Mins</span>
+        <div class="recipe-card-inner">
+          <div class="recipe-card-front">
+            <div class="recipe-header">
+              <span class="recipe-product-badge">Uses: Fresh Thepla</span>
+              <span class="recipe-time">⏱️ 15 Mins</span>
+            </div>
+            <h3 class="recipe-title">Pizza Thepla Wrap</h3>
+            <p class="recipe-desc">Roll a classic fenugreek-spiced thepla into a delicious wrap filled with capsicum, paneer, oregano, and cream cheese.</p>
+            <div class="recipe-ingredients-brief">
+              <strong>Key Ingredients:</strong> Thepla, pizza sauce, paneer, capsicum, liquid cheese.
+            </div>
+            <span class="recipe-flip-hint">Tap to see recipe →</span>
+          </div>
+          <div class="recipe-card-back">
+            <h4 class="recipe-back-title">Pizza Thepla Wrap</h4>
+            <ol class="recipe-steps-list">
+              <li>Heat the thepla on a flat pan with a dab of butter.</li>
+              <li>Spread 1 tablespoon of pizza sauce evenly down the center.</li>
+              <li>Add capsicum strips and lightly sautéed paneer cubes.</li>
+              <li>Drizzle melted cheese and sprinkle pizza spices. Roll tight and serve.</li>
+            </ol>
+            <span class="recipe-flip-hint">Tap to go back ←</span>
+          </div>
         </div>
-        <h3 class="recipe-title">Pizza Thepla Wrap</h3>
-        <p class="recipe-desc">Roll a classic fenugreek-spiced thepla into a delicious wrap filled with capsicum, paneer, oregano, and cream cheese.</p>
-        <div class="recipe-ingredients-brief">
-          <strong>Key Ingredients:</strong> Thepla, pizza sauce, paneer, capsicum, liquid cheese.
-        </div>
-        <div class="recipe-directions-accordion">
-          <ol class="recipe-steps-list">
-            <li>Heat the thepla on a flat pan with a dab of butter.</li>
-            <li>Spread 1 tablespoon of pizza sauce evenly down the center.</li>
-            <li>Add capsicum strips and lightly sautéed paneer cubes.</li>
-            <li>Drizzle melted cheese and sprinkle pizza spices. Roll tight and serve.</li>
-          </ol>
-        </div>
-        <button class="btn-toggle-recipe">View Full Recipe →</button>
       </div>
 
       <!-- Recipe 2: Khakhra Chaat -->
       <div class="recipe-card" data-recipe-category="street">
-        <div class="recipe-header">
-          <span class="recipe-product-badge">Uses: Masala Khakhra</span>
-          <span class="recipe-time">⏱️ 5 Mins</span>
+        <div class="recipe-card-inner">
+          <div class="recipe-card-front">
+            <div class="recipe-header">
+              <span class="recipe-product-badge">Uses: Masala Khakhra</span>
+              <span class="recipe-time">⏱️ 5 Mins</span>
+            </div>
+            <h3 class="recipe-title">Masala Khakhra Chaat</h3>
+            <p class="recipe-desc">A crunchy, light street chat. Roughly crushed masala khakhra topped with potatoes, onions, tamarind chutney, and sev.</p>
+            <div class="recipe-ingredients-brief">
+              <strong>Key Ingredients:</strong> Masala Khakhra, boiled potato, chopped onion, sweet chutney, fine sev.
+            </div>
+            <span class="recipe-flip-hint">Tap to see recipe →</span>
+          </div>
+          <div class="recipe-card-back">
+            <h4 class="recipe-back-title">Masala Khakhra Chaat</h4>
+            <ol class="recipe-steps-list">
+              <li>Lightly crush 2 Masala Khakhras into a serving plate.</li>
+              <li>Layer with cubes of boiled potatoes and chopped raw onions.</li>
+              <li>Drizzle sweet date-tamarind chutney and spicy green chutney.</li>
+              <li>Garnish heavily with fine gram flour sev and fresh coriander. Eat immediately.</li>
+            </ol>
+            <span class="recipe-flip-hint">Tap to go back ←</span>
+          </div>
         </div>
-        <h3 class="recipe-title">Masala Khakhra Chaat</h3>
-        <p class="recipe-desc">A crunchy, light street chat. Roughly crushed masala khakhra topped with potatoes, onions, tamarind chutney, and sev.</p>
-        <div class="recipe-ingredients-brief">
-          <strong>Key Ingredients:</strong> Masala Khakhra, boiled potato, chopped onion, sweet chutney, fine sev.
-        </div>
-        <div class="recipe-directions-accordion">
-          <ol class="recipe-steps-list">
-            <li>Lightly crush 2 Masala Khakhras into a serving plate.</li>
-            <li>Layer with cubes of boiled potatoes and chopped raw onions.</li>
-            <li>Drizzle sweet date-tamarind chutney and spicy green chutney.</li>
-            <li>Garnish heavily with fine gram flour sev and fresh coriander. Eat immediately.</li>
-          </ol>
-        </div>
-        <button class="btn-toggle-recipe">View Full Recipe →</button>
       </div>
 
       <!-- Recipe 3: Khakhra Nachos -->
       <div class="recipe-card" data-recipe-category="fusion">
-        <div class="recipe-header">
-          <span class="recipe-product-badge">Uses: Plain Khakhra</span>
-          <span class="recipe-time">⏱️ 10 Mins</span>
+        <div class="recipe-card-inner">
+          <div class="recipe-card-front">
+            <div class="recipe-header">
+              <span class="recipe-product-badge">Uses: Plain Khakhra</span>
+              <span class="recipe-time">⏱️ 10 Mins</span>
+            </div>
+            <h3 class="recipe-title">Khakhra Nachos</h3>
+            <p class="recipe-desc">Tex-Mex meets Gujarati heritage! Crisp plain khakhra triangles served with black beans, sour cream, and mango salsa.</p>
+            <div class="recipe-ingredients-brief">
+              <strong>Key Ingredients:</strong> Plain Khakhra, beans, sour cream, salsa, jalapeño slices.
+            </div>
+            <span class="recipe-flip-hint">Tap to see recipe →</span>
+          </div>
+          <div class="recipe-card-back">
+            <h4 class="recipe-back-title">Khakhra Nachos</h4>
+            <ol class="recipe-steps-list">
+              <li>Break Plain Khakhras into triangular chip shapes.</li>
+              <li>Arrange them in a circular pattern on a microwave-safe platter.</li>
+              <li>Layer with seasoned boiled black beans and shredded cheese.</li>
+              <li>Heat for 45 seconds to melt cheese. Top with cold sour cream and salsa.</li>
+            </ol>
+            <span class="recipe-flip-hint">Tap to go back ←</span>
+          </div>
         </div>
-        <h3 class="recipe-title">Khakhra Nachos</h3>
-        <p class="recipe-desc">Tex-Mex meets Gujarati heritage! Crisp plain khakhra triangles served with black beans, sour cream, and mango salsa.</p>
-        <div class="recipe-ingredients-brief">
-          <strong>Key Ingredients:</strong> Plain Khakhra, beans, sour cream, salsa, jalapeño slices.
-        </div>
-        <div class="recipe-directions-accordion">
-          <ol class="recipe-steps-list">
-            <li>Break Plain Khakhras into triangular chip shapes.</li>
-            <li>Arrange them in a circular pattern on a microwave-safe platter.</li>
-            <li>Layer with seasoned boiled black beans and shredded cheese.</li>
-            <li>Heat for 45 seconds to melt cheese. Top with cold sour cream and salsa.</li>
-          </ol>
-        </div>
-        <button class="btn-toggle-recipe">View Full Recipe →</button>
       </div>
 
       <!-- Recipe 4: Sev Puri -->
       <div class="recipe-card" data-recipe-category="street">
-        <div class="recipe-header">
-          <span class="recipe-product-badge">Uses: Ratlami Sev</span>
-          <span class="recipe-time">⏱️ 8 Mins</span>
+        <div class="recipe-card-inner">
+          <div class="recipe-card-front">
+            <div class="recipe-header">
+              <span class="recipe-product-badge">Uses: Ratlami Sev</span>
+              <span class="recipe-time">⏱️ 8 Mins</span>
+            </div>
+            <h3 class="recipe-title">Ratlami Sev Puri</h3>
+            <p class="recipe-desc">Classic flat street puris layered with standard potatoes, sweet garlic sauces, and overloaded with fiery Ratlami Sev.</p>
+            <div class="recipe-ingredients-brief">
+              <strong>Key Ingredients:</strong> Flat papdis, potato mash, garlic chutney, Ratlami Sev, raw mango slices.
+            </div>
+            <span class="recipe-flip-hint">Tap to see recipe →</span>
+          </div>
+          <div class="recipe-card-back">
+            <h4 class="recipe-back-title">Ratlami Sev Puri</h4>
+            <ol class="recipe-steps-list">
+              <li>Arrange flat papdis on a plate.</li>
+              <li>Place a small dollop of mashed spiced potato on each.</li>
+              <li>Drizzle red chili-garlic chutney and green mint sauce.</li>
+              <li>Cover the entire assembly with a mountain of coarse Ratlami Sev. Garnish with sour mango bits.</li>
+            </ol>
+            <span class="recipe-flip-hint">Tap to go back ←</span>
+          </div>
         </div>
-        <h3 class="recipe-title">Ratlami Sev Puri</h3>
-        <p class="recipe-desc">Classic flat street puris layered with standard potatoes, sweet garlic sauces, and overloaded with fiery Ratlami Sev.</p>
-        <div class="recipe-ingredients-brief">
-          <strong>Key Ingredients:</strong> Flat papdis, potato mash, garlic chutney, Ratlami Sev, raw mango slices.
-        </div>
-        <div class="recipe-directions-accordion">
-          <ol class="recipe-steps-list">
-            <li>Arrange flat papdis on a plate.</li>
-            <li>Place a small dollop of mashed spiced potato on each.</li>
-            <li>Drizzle red chili-garlic chutney and green mint sauce.</li>
-            <li>Cover the entire assembly with a mountain of coarse Ratlami Sev. Garnish with sour mango bits.</li>
-          </ol>
-        </div>
-        <button class="btn-toggle-recipe">View Full Recipe →</button>
       </div>
 
       <!-- Recipe 5: Bhel -->
       <div class="recipe-card" data-recipe-category="street">
-        <div class="recipe-header">
-          <span class="recipe-product-badge">Uses: Mix Namkeen</span>
-          <span class="recipe-time">⏱️ 5 Mins</span>
+        <div class="recipe-card-inner">
+          <div class="recipe-card-front">
+            <div class="recipe-header">
+              <span class="recipe-product-badge">Uses: Mix Namkeen</span>
+              <span class="recipe-time">⏱️ 5 Mins</span>
+            </div>
+            <h3 class="recipe-title">Pantry Chavanu Bhel</h3>
+            <p class="recipe-desc">Sweet, sour, and crunchy bhel made by tossing puffed rice with raw tomatoes, lemon, and sweet-sour Chavanu.</p>
+            <div class="recipe-ingredients-brief">
+              <strong>Key Ingredients:</strong> Mix Namkeen, puffed rice (kurmura), chopped tomato, onion, lemon juice.
+            </div>
+            <span class="recipe-flip-hint">Tap to see recipe →</span>
+          </div>
+          <div class="recipe-card-back">
+            <h4 class="recipe-back-title">Pantry Chavanu Bhel</h4>
+            <ol class="recipe-steps-list">
+              <li>Mix equal parts puffed rice and Sonalben Mix Namkeen in a large bowl.</li>
+              <li>Add chopped tomatoes, raw onions, and chopped coriander leaves.</li>
+              <li>Drizzle 1 tablespoon of raw green mango syrup and fresh lemon juice.</li>
+              <li>Toss together rapidly and serve in paper cones for the authentic street experience.</li>
+            </ol>
+            <span class="recipe-flip-hint">Tap to go back ←</span>
+          </div>
         </div>
-        <h3 class="recipe-title">Pantry Chavanu Bhel</h3>
-        <p class="recipe-desc">Sweet, sour, and crunchy bhel made by tossing puffed rice with raw tomatoes, lemon, and sweet-sour Chavanu.</p>
-        <div class="recipe-ingredients-brief">
-          <strong>Key Ingredients:</strong> Mix Namkeen, puffed rice (kurmura), chopped tomato, onion, lemon juice.
-        </div>
-        <div class="recipe-directions-accordion">
-          <ol class="recipe-steps-list">
-            <li>Mix equal parts puffed rice and Sonalben Mix Namkeen in a large bowl.</li>
-            <li>Add chopped tomatoes, raw onions, and chopped coriander leaves.</li>
-            <li>Drizzle 1 tablespoon of raw green mango syrup and fresh lemon juice.</li>
-            <li>Toss together rapidly and serve in paper cones for the authentic street experience.</li>
-          </ol>
-        </div>
-        <button class="btn-toggle-recipe">View Full Recipe →</button>
       </div>
 
       <!-- Recipe 6: Thepla Wrap -->
       <div class="recipe-card" data-recipe-category="quick">
-        <div class="recipe-header">
-          <span class="recipe-product-badge">Uses: Fresh Thepla</span>
-          <span class="recipe-time">⏱️ 5 Mins</span>
+        <div class="recipe-card-inner">
+          <div class="recipe-card-front">
+            <div class="recipe-header">
+              <span class="recipe-product-badge">Uses: Fresh Thepla</span>
+              <span class="recipe-time">⏱️ 5 Mins</span>
+            </div>
+            <h3 class="recipe-title">Thepla Veggie Wrap</h3>
+            <p class="recipe-desc">The ultimate travel wrap. Spread sweet mango pickle inside soft fresh methi theplas and roll with raw cucumber slices.</p>
+            <div class="recipe-ingredients-brief">
+              <strong>Key Ingredients:</strong> Thepla, mango pickle, cucumber strips, mint leaves.
+            </div>
+            <span class="recipe-flip-hint">Tap to see recipe →</span>
+          </div>
+          <div class="recipe-card-back">
+            <h4 class="recipe-back-title">Thepla Veggie Wrap</h4>
+            <ol class="recipe-steps-list">
+              <li>Warm up the methi thepla slightly on a pan.</li>
+              <li>Spread a thin layer of Sonalben Spicy Mango Pickle gravy.</li>
+              <li>Place fresh cucumber sticks and fresh mint leaves in the center.</li>
+              <li>Roll up tightly in a foil wrapper. Perfect for lunch boxes and road trips.</li>
+            </ol>
+            <span class="recipe-flip-hint">Tap to go back ←</span>
+          </div>
         </div>
-        <h3 class="recipe-title">Thepla Veggie Wrap</h3>
-        <p class="recipe-desc">The ultimate travel wrap. Spread sweet mango pickle inside soft fresh methi theplas and roll with raw cucumber slices.</p>
-        <div class="recipe-ingredients-brief">
-          <strong>Key Ingredients:</strong> Thepla, mango pickle, cucumber strips, mint leaves.
-        </div>
-        <div class="recipe-directions-accordion">
-          <ol class="recipe-steps-list">
-            <li>Warm up the methi thepla slightly on a pan.</li>
-            <li>Spread a thin layer of Sonalben Spicy Mango Pickle gravy.</li>
-            <li>Place fresh cucumber sticks and fresh mint leaves in the center.</li>
-            <li>Roll up tightly in a foil wrapper. Perfect for lunch boxes and road trips.</li>
-          </ol>
-        </div>
-        <button class="btn-toggle-recipe">View Full Recipe →</button>
       </div>
 
       <!-- Recipe 7: Cheese Khakhra Pizza -->
       <div class="recipe-card" data-recipe-category="fusion">
-        <div class="recipe-header">
-          <span class="recipe-product-badge">Uses: Methi Khakhra</span>
-          <span class="recipe-time">⏱️ 10 Mins</span>
+        <div class="recipe-card-inner">
+          <div class="recipe-card-front">
+            <div class="recipe-header">
+              <span class="recipe-product-badge">Uses: Methi Khakhra</span>
+              <span class="recipe-time">⏱️ 10 Mins</span>
+            </div>
+            <h3 class="recipe-title">Cheese Khakhra Pizza</h3>
+            <p class="recipe-desc">Crunchy whole wheat pizza. Methi khakhra base topped with tomato reduction, sweet corn, paneer, and lots of mozzarella.</p>
+            <div class="recipe-ingredients-brief">
+              <strong>Key Ingredients:</strong> Methi Khakhra, pizza reduction, sweet corn, paneer, grated mozzarella.
+            </div>
+            <span class="recipe-flip-hint">Tap to see recipe →</span>
+          </div>
+          <div class="recipe-card-back">
+            <h4 class="recipe-back-title">Cheese Khakhra Pizza</h4>
+            <ol class="recipe-steps-list">
+              <li>Take one crisp Methi Khakhra.</li>
+              <li>Brush lightly with olive oil or butter, then apply a layer of pizza sauce.</li>
+              <li>Top with sweet corn kernels, diced bell peppers, and paneer cubes.</li>
+              <li>Sprinkle mozzarella cheese and cook on a low pan covered with a lid until cheese melts.</li>
+            </ol>
+            <span class="recipe-flip-hint">Tap to go back ←</span>
+          </div>
         </div>
-        <h3 class="recipe-title">Cheese Khakhra Pizza</h3>
-        <p class="recipe-desc">Crunchy whole wheat pizza. Methi khakhra base topped with tomato reduction, sweet corn, paneer, and lots of mozzarella.</p>
-        <div class="recipe-ingredients-brief">
-          <strong>Key Ingredients:</strong> Methi Khakhra, pizza reduction, sweet corn, paneer, grated mozzarella.
-        </div>
-        <div class="recipe-directions-accordion">
-          <ol class="recipe-steps-list">
-            <li>Take one crisp Methi Khakhra.</li>
-            <li>Brush lightly with olive oil or butter, then apply a layer of pizza sauce.</li>
-            <li>Top with sweet corn kernels, diced bell peppers, and paneer cubes.</li>
-            <li>Sprinkle mozzarella cheese and cook on a low pan covered with a lid until cheese melts.</li>
-          </ol>
-        </div>
-        <button class="btn-toggle-recipe">View Full Recipe →</button>
       </div>
 
       <!-- Recipe 8: Papdi Chaat -->
       <div class="recipe-card" data-recipe-category="street">
-        <div class="recipe-header">
-          <span class="recipe-product-badge">Uses: Papad & Sev</span>
-          <span class="recipe-time">⏱️ 10 Mins</span>
+        <div class="recipe-card-inner">
+          <div class="recipe-card-front">
+            <div class="recipe-header">
+              <span class="recipe-product-badge">Uses: Papad & Sev</span>
+              <span class="recipe-time">⏱️ 10 Mins</span>
+            </div>
+            <h3 class="recipe-title">Deconstructed Papdi Chaat</h3>
+            <p class="recipe-desc">Flat besan papdi layered with sweetened yogurt, green chili chutney, boiled potatoes, and coarse papad sprinkles.</p>
+            <div class="recipe-ingredients-brief">
+              <strong>Key Ingredients:</strong> Flat papdis, sweet curd, potatoes, raw mango, spicy sev.
+            </div>
+            <span class="recipe-flip-hint">Tap to see recipe →</span>
+          </div>
+          <div class="recipe-card-back">
+            <h4 class="recipe-back-title">Deconstructed Papdi Chaat</h4>
+            <ol class="recipe-steps-list">
+              <li>Arrange papdi biscuits flat on a plate.</li>
+              <li>Top each with mashed potatoes and chilled sweetened yogurt.</li>
+              <li>Drizzle green chili and sweet date chutneys.</li>
+              <li>Garnish with raw mango pieces, chili powder, and fine sev.</li>
+            </ol>
+            <span class="recipe-flip-hint">Tap to go back ←</span>
+          </div>
         </div>
-        <h3 class="recipe-title">Deconstructed Papdi Chaat</h3>
-        <p class="recipe-desc">Flat besan papdi layered with sweetened yogurt, green chili chutney, boiled potatoes, and coarse papad sprinkles.</p>
-        <div class="recipe-ingredients-brief">
-          <strong>Key Ingredients:</strong> Flat papdis, sweet curd, potatoes, raw mango, spicy sev.
-        </div>
-        <div class="recipe-directions-accordion">
-          <ol class="recipe-steps-list">
-            <li>Arrange papdi biscuits flat on a plate.</li>
-            <li>Top each with mashed potatoes and chilled sweetened yogurt.</li>
-            <li>Drizzle green chili and sweet date chutneys.</li>
-            <li>Garnish with raw mango pieces, chili powder, and fine sev.</li>
-          </ol>
-        </div>
-        <button class="btn-toggle-recipe">View Full Recipe →</button>
       </div>
 
       <!-- Recipe 9: Farsan Chaat -->
       <div class="recipe-card" data-recipe-category="street">
-        <div class="recipe-header">
-          <span class="recipe-product-badge">Uses: Gathiya & Sev</span>
-          <span class="recipe-time">⏱️ 5 Mins</span>
+        <div class="recipe-card-inner">
+          <div class="recipe-card-front">
+            <div class="recipe-header">
+              <span class="recipe-product-badge">Uses: Gathiya & Sev</span>
+              <span class="recipe-time">⏱️ 5 Mins</span>
+            </div>
+            <h3 class="recipe-title">Instant Farsan Chaat</h3>
+            <p class="recipe-desc">A quick dry mixture. Toss Bhavnagari Gathiya and plain sev with roasted peanuts, rock salt, coriander, and fresh lemon.</p>
+            <div class="recipe-ingredients-brief">
+              <strong>Key Ingredients:</strong> Gathiya, plain sev, peanuts, chopped coriander, lemon juice.
+            </div>
+            <span class="recipe-flip-hint">Tap to see recipe →</span>
+          </div>
+          <div class="recipe-card-back">
+            <h4 class="recipe-back-title">Instant Farsan Chaat</h4>
+            <ol class="recipe-steps-list">
+              <li>Mix 1 cup Gathiya and 1/2 cup plain sev in a bowl.</li>
+              <li>Toss in dry roasted peanuts and fine chopped green chilies.</li>
+              <li>Squeeze fresh lemon juice over the mixture and toss.</li>
+              <li>Garnish with fresh coriander and serve immediately with hot ginger chai.</li>
+            </ol>
+            <span class="recipe-flip-hint">Tap to go back ←</span>
+          </div>
         </div>
-        <h3 class="recipe-title">Instant Farsan Chaat</h3>
-        <p class="recipe-desc">A quick dry mixture. Toss Bhavnagari Gathiya and plain sev with roasted peanuts, rock salt, coriander, and fresh lemon.</p>
-        <div class="recipe-ingredients-brief">
-          <strong>Key Ingredients:</strong> Gathiya, plain sev, peanuts, chopped coriander, lemon juice.
-        </div>
-        <div class="recipe-directions-accordion">
-          <ol class="recipe-steps-list">
-            <li>Mix 1 cup Gathiya and 1/2 cup plain sev in a bowl.</li>
-            <li>Toss in dry roasted peanuts and fine chopped green chilies.</li>
-            <li>Squeeze fresh lemon juice over the mixture and toss.</li>
-            <li>Garnish with fresh coriander and serve immediately with hot ginger chai.</li>
-          </ol>
-        </div>
-        <button class="btn-toggle-recipe">View Full Recipe →</button>
       </div>
 
       <!-- Recipe 10: Tea Time Snack Ideas -->
       <div class="recipe-card" data-recipe-category="quick">
-        <div class="recipe-header">
-          <span class="recipe-product-badge">Uses: All Pantry</span>
-          <span class="recipe-time">⏱️ 5 Mins</span>
+        <div class="recipe-card-inner">
+          <div class="recipe-card-front">
+            <div class="recipe-header">
+              <span class="recipe-product-badge">Uses: All Pantry</span>
+              <span class="recipe-time">⏱️ 5 Mins</span>
+            </div>
+            <h3 class="recipe-title">Traditional Tea Platters</h3>
+            <p class="recipe-desc">Our suggestions for organizing the ultimate Gujarati high-tea. Arranging combinations of sweet and savory snacks.</p>
+            <div class="recipe-ingredients-brief">
+              <strong>Key Ingredients:</strong> Methi Khakhra, Gathiya, Jalebi, hot ginger tea.
+            </div>
+            <span class="recipe-flip-hint">Tap to see recipe →</span>
+          </div>
+          <div class="recipe-card-back">
+            <h4 class="recipe-back-title">Traditional Tea Platters</h4>
+            <ol class="recipe-steps-list">
+              <li>Prepare a classic cup of Masala Ginger Chai.</li>
+              <li>Arrange 4 slices of Methi Khakhra on the left of a wooden platter.</li>
+              <li>Fill a small bowl with Bhavnagari Gathiya and fried green chilies.</li>
+              <li>Place a few fresh jalebis in the center to balance the savory bite with sweet syrup.</li>
+            </ol>
+            <span class="recipe-flip-hint">Tap to go back ←</span>
+          </div>
         </div>
-        <h3 class="recipe-title">Traditional Tea Platters</h3>
-        <p class="recipe-desc">Our suggestions for organizing the ultimate Gujarati high-tea. Arranging combinations of sweet and savory snacks.</p>
-        <div class="recipe-ingredients-brief">
-          <strong>Key Ingredients:</strong> Methi Khakhra, Gathiya, Jalebi, hot ginger tea.
-        </div>
-        <div class="recipe-directions-accordion">
-          <ol class="recipe-steps-list">
-            <li>Prepare a classic cup of Masala Ginger Chai.</li>
-            <li>Arrange 4 slices of Methi Khakhra on the left of a wooden platter.</li>
-            <li>Fill a small bowl with Bhavnagari Gathiya and fried green chilies.</li>
-            <li>Place a few fresh jalebis in the center to balance the savory bite with sweet syrup.</li>
-          </ol>
-        </div>
-        <button class="btn-toggle-recipe">View Full Recipe →</button>
       </div>
 
       <!-- Recipe 11: Travel Snack Ideas -->
       <div class="recipe-card" data-recipe-category="quick">
-        <div class="recipe-header">
-          <span class="recipe-product-badge">Uses: Jeera Khakhra</span>
-          <span class="recipe-time">⏱️ 5 Mins</span>
+        <div class="recipe-card-inner">
+          <div class="recipe-card-front">
+            <div class="recipe-header">
+              <span class="recipe-product-badge">Uses: Jeera Khakhra</span>
+              <span class="recipe-time">⏱️ 5 Mins</span>
+            </div>
+            <h3 class="recipe-title">Travel Snack Packs</h3>
+            <p class="recipe-desc">Pack mess-free Jeera Khakhra sandwiches wrapped in butter paper, accompanied by dry salted peanuts.</p>
+            <div class="recipe-ingredients-brief">
+              <strong>Key Ingredients:</strong> Jeera Khakhra, butter, dry peanuts, mango pickle pouch.
+            </div>
+            <span class="recipe-flip-hint">Tap to see recipe →</span>
+          </div>
+          <div class="recipe-card-back">
+            <h4 class="recipe-back-title">Travel Snack Packs</h4>
+            <ol class="recipe-steps-list">
+              <li>Butter the inner faces of two Jeera Khakhras lightly.</li>
+              <li>Press them together to form a dry, mess-free sandwich.</li>
+              <li>Wrap securely in butter paper to prevent any breakages.</li>
+              <li>Pack with single-serve pouches of mango pickle for easy dipping on train or car trips.</li>
+            </ol>
+            <span class="recipe-flip-hint">Tap to go back ←</span>
+          </div>
         </div>
-        <h3 class="recipe-title">Travel Snack Packs</h3>
-        <p class="recipe-desc">Pack mess-free Jeera Khakhra sandwiches wrapped in butter paper, accompanied by dry salted peanuts.</p>
-        <div class="recipe-ingredients-brief">
-          <strong>Key Ingredients:</strong> Jeera Khakhra, butter, dry peanuts, mango pickle pouch.
-        </div>
-        <div class="recipe-directions-accordion">
-          <ol class="recipe-steps-list">
-            <li>Butter the inner faces of two Jeera Khakhras lightly.</li>
-            <li>Press them together to form a dry, mess-free sandwich.</li>
-            <li>Wrap securely in butter paper to prevent any breakages.</li>
-            <li>Pack with single-serve pouches of mango pickle for easy dipping on train or car trips.</li>
-          </ol>
-        </div>
-        <button class="btn-toggle-recipe">View Full Recipe →</button>
       </div>
 
       <!-- Recipe 12: Lunch Box Ideas -->
       <div class="recipe-card" data-recipe-category="quick">
-        <div class="recipe-header">
-          <span class="recipe-product-badge">Uses: Diet Khakhra</span>
-          <span class="recipe-time">⏱️ 8 Mins</span>
+        <div class="recipe-card-inner">
+          <div class="recipe-card-front">
+            <div class="recipe-header">
+              <span class="recipe-product-badge">Uses: Diet Khakhra</span>
+              <span class="recipe-time">⏱️ 8 Mins</span>
+            </div>
+            <h3 class="recipe-title">Kids Tiffin Combos</h3>
+            <p class="recipe-desc">Assemble a healthy lunch box with crumbled diet khakhra bowls, sweet raisins, and a small container of mango jam.</p>
+            <div class="recipe-ingredients-brief">
+              <strong>Key Ingredients:</strong> Diet Khakhra, raisins, fresh jam or curd, sweet makhana.
+            </div>
+            <span class="recipe-flip-hint">Tap to see recipe →</span>
+          </div>
+          <div class="recipe-card-back">
+            <h4 class="recipe-back-title">Kids Tiffin Combos</h4>
+            <ol class="recipe-steps-list">
+              <li>Break Diet Khakhras into small, bite-sized crackers.</li>
+              <li>Pack alongside a small spill-proof cup of sweet yogurt or fruit jam.</li>
+              <li>Fill the second compartment with golden raisins and roasted sweet makhana.</li>
+              <li>Provides a dry, clean, healthy, and high-fiber recess treat for school kids.</li>
+            </ol>
+            <span class="recipe-flip-hint">Tap to go back ←</span>
+          </div>
         </div>
-        <h3 class="recipe-title">Kids Tiffin Combos</h3>
-        <p class="recipe-desc">Assemble a healthy lunch box with crumbled diet khakhra bowls, sweet raisins, and a small container of mango jam.</p>
-        <div class="recipe-ingredients-brief">
-          <strong>Key Ingredients:</strong> Diet Khakhra, raisins, fresh jam or curd, sweet makhana.
-        </div>
-        <div class="recipe-directions-accordion">
-          <ol class="recipe-steps-list">
-            <li>Break Diet Khakhras into small, bite-sized crackers.</li>
-            <li>Pack alongside a small spill-proof cup of sweet yogurt or fruit jam.</li>
-            <li>Fill the second compartment with golden raisins and roasted sweet makhana.</li>
-            <li>Provides a dry, clean, healthy, and high-fiber recess treat for school kids.</li>
-          </ol>
-        </div>
-        <button class="btn-toggle-recipe">View Full Recipe →</button>
       </div>
 
     </div>

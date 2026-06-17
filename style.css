@@ -285,7 +285,7 @@ ul { list-style: none; }
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 1.2rem 0;
+  padding: 0.45rem 0;
   background: rgba(255, 248, 231, 0.95);
   border-bottom: 1px solid var(--border-sepia);
   backdrop-filter: blur(10px);
@@ -308,33 +308,34 @@ ul { list-style: none; }
   gap: 12px;
 }
 
-.nav-logo-icon {
-  width: 44px;
-  height: 44px;
+.nav-logo-img {
+  width: 48px;
+  height: 48px;
   border-radius: var(--radius-full);
-  border: 2.5px dashed var(--saffron);
+  object-fit: cover;
+}
+
+.nav-logo-text {
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 1.15rem;
-  color: var(--ink-light);
+  gap: 6px;
 }
 
 .nav-logo-brand {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
   color: var(--ink-light);
   line-height: 1;
 }
 
 .nav-logo-sub {
-  font-family: var(--font-script);
-  font-size: 1.3rem;
-  color: var(--saffron-dark);
-  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--ink-light);
+  line-height: 1;
+  display: inline;
 }
 
 .nav-links {
@@ -609,7 +610,7 @@ ul { list-style: none; }
 
 .scrapbook-timeline {
   position: relative;
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto;
   padding: 2rem 0;
 }
@@ -630,7 +631,7 @@ ul { list-style: none; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 6rem;
+  margin-bottom: 3.5rem;
   width: 100%;
   position: relative;
   z-index: 2;
@@ -642,7 +643,7 @@ ul { list-style: none; }
 .milestone-pin {
   position: absolute;
   left: 50%;
-  top: 45px;
+  top: 35px;
   transform: translateX(-50%);
   width: 18px;
   height: 18px;
@@ -654,7 +655,7 @@ ul { list-style: none; }
 }
 
 .milestone-visual {
-  width: 44%;
+  width: 40%;
   display: flex;
   justify-content: center;
 }
@@ -662,27 +663,27 @@ ul { list-style: none; }
 /* Polaroid Photo Card styling */
 .scrapbook-polaroid-card {
   background: white;
-  padding: 12px 12px 36px 12px;
+  padding: 10px 10px 24px 10px;
   border-radius: 2px;
   border: 1px solid var(--border-sepia);
   box-shadow: var(--shadow-polaroid);
-  max-width: 270px;
+  max-width: 210px;
   width: 100%;
   position: relative;
   transition: transform var(--duration-normal) var(--ease-bounce);
 }
 .scrapbook-polaroid-card img {
   width: 100%;
-  height: 200px;
+  height: 150px;
   object-fit: cover;
   border-radius: 1px;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
   background: var(--cream);
   border: 1px solid rgba(0,0,0,0.06);
 }
 .scrapbook-polaroid-card .polaroid-script {
   font-family: var(--font-script);
-  font-size: 1.7rem;
+  font-size: 1.35rem;
   color: var(--ink-muted);
   text-align: center;
 }
@@ -694,7 +695,7 @@ ul { list-style: none; }
   top: -15px;
   left: 50%;
   transform: translateX(-50%) rotate(-5deg);
-  width: 100px;
+  width: 80px;
   height: 26px;
   background: rgba(240,180,41,0.2);
   border-left: 2px dashed rgba(240,180,41,0.3);
@@ -713,9 +714,9 @@ ul { list-style: none; }
 
 /* Scrapbook Story Card content */
 .milestone-content {
-  width: 44%;
+  width: 40%;
   background: var(--parchment);
-  padding: 2.2rem;
+  padding: 1.3rem 1.8rem 1.6rem 1.8rem;
   border-radius: var(--radius-lg);
   border: 1.5px solid var(--border-sepia);
   box-shadow: var(--shadow-md);
@@ -732,16 +733,16 @@ ul { list-style: none; }
 }
 
 .milestone-content h3 {
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   font-weight: 700;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
   color: var(--ink-light);
 }
 
 .milestone-content p {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--ink-muted);
-  line-height: 1.65;
+  line-height: 1.6;
 }
 
 /* Handwritten post-it note annotations */
@@ -813,7 +814,8 @@ ul { list-style: none; }
 .product-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3.5rem 2.5rem;
+  gap: 2rem 1.5rem;
+  padding: 0 2.5rem;
 }
 
 /* Card Styling: Pantry Jar / Bag label feel */
@@ -828,13 +830,13 @@ ul { list-style: none; }
   flex-direction: column;
 }
 .product-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
 }
 
 .product-image-wrap {
   position: relative;
-  height: 230px;
+  height: 145px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -843,26 +845,25 @@ ul { list-style: none; }
   border-bottom: 1.5px solid var(--border-sepia);
 }
 .product-image-wrap img {
-  max-width: 70%;
-  max-height: 80%;
-  object-fit: contain;
-  filter: drop-shadow(0 8px 16px rgba(46,37,32,0.15));
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transition: transform 0.5s var(--ease-out-expo);
 }
 .product-card:hover .product-image-wrap img {
-  transform: scale(1.08) rotate(3deg);
+  transform: scale(1.06);
 }
 
 .product-badge {
   position: absolute;
-  top: 15px;
-  left: 15px;
+  top: 10px;
+  left: 10px;
   background: var(--saffron);
   color: white;
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 700;
   text-transform: uppercase;
-  padding: 4px 12px;
+  padding: 3px 10px;
   border-radius: var(--radius-sm);
   z-index: 2;
   letter-spacing: 0.05em;
@@ -879,7 +880,7 @@ ul { list-style: none; }
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  padding: 1rem;
   opacity: 0;
   transition: opacity 0.4s var(--ease-smooth);
   z-index: 3;
@@ -890,80 +891,80 @@ ul { list-style: none; }
 
 .hover-ingredients-title {
   font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 0.6rem;
   color: var(--saffron-dark);
   border-bottom: 1.5px solid var(--border-sepia);
   width: 80%;
   text-align: center;
-  padding-bottom: 0.4rem;
+  padding-bottom: 0.3rem;
 }
 .hover-ingredients-list {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--ink-light);
 }
 
 /* Pantry details description */
 .product-info {
-  padding: 1.8rem;
+  padding: 1.15rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
 .product-category {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
   color: var(--saffron);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
 }
 
 .product-name {
-  font-size: 1.35rem;
+  font-size: 1.15rem;
   font-weight: 700;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.4rem;
   color: var(--ink-light);
   line-height: 1.2;
 }
 
 .product-desc {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--ink-muted);
-  line-height: 1.55;
-  margin-bottom: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 0.8rem;
   flex-grow: 1;
 }
 
 .product-details-chips {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 1.2rem;
+  gap: 6px;
+  margin-bottom: 0.8rem;
 }
 .pki-chip {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 600;
   background: var(--warm-beige);
   color: var(--ink-light);
-  padding: 4px 12px;
+  padding: 3px 10px;
   border-radius: var(--radius-sm);
   border: 1px solid rgba(46,37,32,0.08);
 }
 
 .product-pairings {
-  font-size: 0.875rem;
+  font-size: 0.8rem;
   color: var(--ink-muted);
-  margin-bottom: 1.2rem;
+  margin-bottom: 0.8rem;
   border-top: 1.5px dashed var(--border-sepia);
-  padding-top: 0.8rem;
+  padding-top: 0.6rem;
 }
 .product-pairings strong { color: var(--ink-light); }
 
@@ -972,24 +973,24 @@ ul { list-style: none; }
   align-items: center;
   justify-content: space-between;
   border-top: 1.5px solid var(--border-sepia);
-  padding-top: 1.2rem;
+  padding-top: 0.8rem;
   margin-top: auto;
 }
 
 .product-price {
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--ink-light);
 }
 .price-unit {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--ink-subtle);
   font-weight: 500;
 }
 
 .add-to-cart {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: var(--radius-full);
   background: var(--saffron);
   color: white;
@@ -1004,8 +1005,8 @@ ul { list-style: none; }
   transform: scale(1.06);
 }
 .add-to-cart svg {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   stroke: currentColor;
   fill: none;
   stroke-width: 2.8;
@@ -1051,33 +1052,103 @@ ul { list-style: none; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
+  padding: 0 2.5rem;
 }
 
-/* Index Card Layout with rules */
+/* === FLIP CARD 3D SYSTEM === */
 .recipe-card {
-  background: var(--parchment) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='24'%3E%3Cline x1='0' y1='23' x2='100%25' y2='23' stroke='rgba(232,115,42,0.06)' stroke-width='1.5'/%3E%3C/svg%3E") repeat;
+  perspective: 1000px;
+  cursor: pointer;
+  min-height: 380px;
+}
+
+.recipe-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  transition: transform 0.6s var(--ease-smooth);
+  transform-style: preserve-3d;
+}
+
+.recipe-card.is-flipped .recipe-card-inner {
+  transform: rotateY(180deg);
+}
+
+.recipe-card-front,
+.recipe-card-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-sepia);
   box-shadow: 0 4px 15px rgba(46,37,32,0.08);
   padding: 2rem;
-  transition: transform var(--duration-normal), box-shadow var(--duration-normal);
   display: flex;
   flex-direction: column;
-  position: relative;
 }
-.recipe-card::before {
+
+.recipe-card-front {
+  background: var(--parchment) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='24'%3E%3Cline x1='0' y1='23' x2='100%25' y2='23' stroke='rgba(232,115,42,0.06)' stroke-width='1.5'/%3E%3C/svg%3E") repeat;
+  z-index: 2;
+}
+
+.recipe-card-front::before {
   content: '';
   position: absolute;
   top: 15px;
   left: 0;
   right: 0;
   height: 1px;
-  border-top: 2px solid rgba(198,40,40,0.18); /* Red card outline header rule */
+  border-top: 2px solid rgba(198,40,40,0.18);
 }
+
+.recipe-card-back {
+  background: var(--cream);
+  transform: rotateY(180deg);
+  z-index: 1;
+  justify-content: center;
+  gap: 1.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='28'%3E%3Cline x1='0' y1='27' x2='100%25' y2='27' stroke='rgba(194,90,21,0.08)' stroke-width='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+.recipe-back-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--saffron-dark);
+  border-bottom: 2px solid var(--brand-gold-light);
+  padding-bottom: 0.6rem;
+}
+
+.recipe-card-back .recipe-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 1.4rem;
+  list-style-type: decimal;
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  line-height: 1.6;
+}
+
+.recipe-flip-hint {
+  font-family: var(--font-script);
+  font-size: 1.3rem;
+  color: var(--saffron);
+  text-align: center;
+  margin-top: auto;
+  padding-top: 0.8rem;
+  display: block;
+}
+
 .recipe-card:hover {
-  transform: translateY(-6px) rotate(0.5deg);
-  box-shadow: var(--shadow-md);
+  transform: none;
 }
+
+/* (recipe-card styles are now in the flip card system above) */
 
 .recipe-header {
   display: flex;
@@ -1135,49 +1206,7 @@ ul { list-style: none; }
   margin-bottom: 0.3rem;
 }
 
-/* Accordion instructions steps wrapper */
-.recipe-directions-accordion {
-  display: none;
-  font-size: 0.875rem;
-  color: var(--ink-muted);
-  border-top: 1.5px dashed var(--border-sepia);
-  padding-top: 1rem;
-  margin-bottom: 1.5rem;
-}
-.recipe-directions-accordion.is-visible {
-  display: block;
-  animation: slide-down 0.4s var(--ease-smooth) forwards;
-}
-
-.recipe-steps-list {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding-left: 1.2rem;
-  list-style-type: decimal;
-}
-
-.btn-toggle-recipe {
-  color: var(--saffron-dark);
-  font-weight: 700;
-  font-size: 0.812rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 4px 0;
-  border-bottom: 1.5px solid transparent;
-  align-self: flex-start;
-  transition: border 0.2s, color 0.2s;
-  margin-top: auto;
-}
-.btn-toggle-recipe:hover {
-  color: var(--ink);
-  border-color: var(--ink);
-}
-
-@keyframes slide-down {
-  0% { opacity: 0; transform: translateY(-8px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
+/* (Old recipe accordion/toggle styles replaced by flip card system) */
 
 /* ============================================================
    FESTIVALS EXPERIENCE
@@ -1191,6 +1220,7 @@ ul { list-style: none; }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
+  padding: 0 2.5rem;
 }
 
 .festival-card {
@@ -1485,7 +1515,7 @@ ul { list-style: none; }
   }
   .milestone-visual, .milestone-content {
     width: 100%;
-    max-width: 500px;
+    max-width: 420px;
   }
   .milestone-pin {
     left: 40px;
@@ -1522,16 +1552,20 @@ ul { list-style: none; }
     box-shadow: var(--shadow-md);
   }
 
-  .product-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
-  .recipe-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
-  .festival-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
+  .product-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; padding: 0 1rem; }
+  .recipe-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; padding: 0 1rem; }
+  .festival-grid { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; padding: 0 1rem; }
   .moments-grid { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto; }
   .footer-top { grid-template-columns: 1fr; gap: 2.5rem; }
 }
 
 @media (max-width: 480px) {
-  .nav-logo-brand { font-size: 1.1rem; }
-  .nav-logo-sub { font-size: 1.1rem; }
+  .nav-logo-img {
+    width: 40px;
+    height: 40px;
+  }
+  .nav-logo-brand { font-size: 1rem; }
+  .nav-logo-sub { font-size: 1rem; }
   
   .hero-title { font-size: 2.6rem; }
   .hero-ctas { flex-direction: column; width: 100%; }

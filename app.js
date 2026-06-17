@@ -59,10 +59,10 @@ function initNavigation() {
   // Scroll effect
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-      nav.style.padding = '0.7rem 0';
+      nav.style.padding = '0.3rem 0';
       nav.style.boxShadow = '0 4px 20px rgba(46,37,32,0.06)';
     } else {
-      nav.style.padding = '1.2rem 0';
+      nav.style.padding = '0.45rem 0';
       nav.style.boxShadow = 'none';
     }
   }, { passive: true });
@@ -82,7 +82,7 @@ function initNavigation() {
     });
   }
 
-  // Smooth scroll
+  // Smooth scroll for nav links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
       e.preventDefault();
@@ -96,6 +96,15 @@ function initNavigation() {
       }
     });
   });
+
+  // Logo button scrolls to top
+  const logoBtn = document.getElementById('nav-logo-btn');
+  if (logoBtn) {
+    logoBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 }
 
 /* ============================================================
@@ -283,25 +292,12 @@ function initCookbook() {
     });
   }
 
-  // Accordion toggle steps
-  document.querySelectorAll('.btn-toggle-recipe').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const card = btn.closest('.recipe-card');
-      const accordion = card.querySelector('.recipe-directions-accordion');
-      if (!accordion) return;
-
-      const isVisible = accordion.classList.contains('is-visible');
-      if (isVisible) {
-        accordion.classList.remove('is-visible');
-        btn.textContent = 'View Full Recipe →';
-      } else {
-        accordion.classList.add('is-visible');
-        btn.textContent = 'Hide Recipe Steps ↑';
-        if (typeof gsap !== 'undefined') {
-          gsap.from(accordion, { opacity: 0, y: -6, duration: 0.35, ease: 'power2.out' });
-        }
-      }
+  // Recipe card flip toggle
+  document.querySelectorAll('.recipe-card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      // Don't flip if user is selecting text
+      if (window.getSelection().toString()) return;
+      card.classList.toggle('is-flipped');
     });
   });
 }
