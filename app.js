@@ -155,10 +155,12 @@ function initHeroParallax() {
     scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: 1 },
     y: 80, opacity: 0
   });
-  gsap.to('.floating-foods', {
-    scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: 1 },
-    y: -50, opacity: 0.1
-  });
+  if (document.querySelector('.floating-foods')) {
+    gsap.to('.floating-foods', {
+      scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: 1 },
+      y: -50, opacity: 0.1
+    });
+  }
 }
 
 /* ============================================================
