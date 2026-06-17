@@ -101,7 +101,7 @@ function initNavigation() {
   const logoBtn = document.getElementById('nav-logo-btn');
   if (logoBtn) {
     logoBtn.addEventListener('click', (e) => {
-      if (window.location.pathname.includes('story.html')) {
+      if (window.location.pathname.includes('story.html') || window.location.pathname.includes('products.html')) {
         return; // Allow standard navigation to index.html
       }
       e.preventDefault();
