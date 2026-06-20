@@ -97,11 +97,15 @@ function initNavigation() {
     });
   });
 
-  // Logo button scrolls to top
+  // Logo button scrolls to top or navigates home
   const logoBtn = document.getElementById('nav-logo-btn');
   if (logoBtn) {
     logoBtn.addEventListener('click', (e) => {
-      if (window.location.pathname.includes('story.html') || window.location.pathname.includes('products.html')) {
+      const isHome = window.location.pathname.endsWith('index.html') || 
+                     window.location.pathname.endsWith('/') || 
+                     window.location.pathname === '' || 
+                     (!window.location.pathname.includes('.html') && !window.location.pathname.includes('/'));
+      if (!isHome) {
         return; // Allow standard navigation to index.html
       }
       e.preventDefault();

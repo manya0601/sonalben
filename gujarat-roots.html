@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gujarat Roots — Sonalben Khakhrawala. Discover the regions of Gujarat that inspire our ingredients, food traditions, and distribution network.">
+  <title>Gujarat Roots — Sonalben Khakhrawala</title>
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23C25A15'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='Georgia' font-weight='800' font-size='14' fill='%23FFFBF5'%3ESK%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="app.js" defer></script>
+
+  <style>
+    /* ── Gujarat Roots Page ────────────────────────────────────── */
+    .gr-page {
+      background: #0e0a05;
+      color: #FFF8E7;
+      min-height: 100vh;
+    }
+
+    /* ── Nav override ─────────────────────────────────────────── */
+    .gr-page .main-nav {
+      background: rgba(14,10,5,0.9) !important;
+      border-bottom: 1px solid rgba(240,180,41,0.12) !important;
+    }
+    .gr-page .main-nav .nav-links a {
+      color: rgba(255,248,231,0.7) !important;
+    }
+    .gr-page .main-nav .nav-links a:hover,
+    .gr-page .main-nav .nav-links a.is-active {
+      color: #F0B429 !important;
+    }
+
+    /* ── Hero ─────────────────────────────────────────────────── */
+    .gr-hero {
+      padding: 9rem 2rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gr-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% 40%, rgba(232,115,42,0.08), transparent 70%);
+    }
+
+    .gr-eyebrow {
+      font-family: var(--font-script);
+      font-size: 1.4rem;
+      color: #E8732A;
+      display: block;
+      margin-bottom: 0.5rem;
+      opacity: 0;
+      animation: gr-rise 0.8s var(--ease-out-expo) 0.3s forwards;
+    }
+
+    .gr-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: #FFF8E7;
+      opacity: 0;
+      animation: gr-rise 0.9s var(--ease-out-expo) 0.5s forwards;
+    }
+
+    .gr-hero h1 em {
+      font-style: normal;
+      background: linear-gradient(135deg, #F0B429, #E8732A);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .gr-hero-sub {
+      margin-top: 1rem;
+      font-size: 1.05rem;
+      color: rgba(255,248,231,0.5);
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0;
+      animation: gr-rise 0.8s var(--ease-out-expo) 0.7s forwards;
+    }
+
+    .gr-legend {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+      opacity: 0;
+      animation: gr-rise 0.8s var(--ease-out-expo) 0.9s forwards;
+    }
+
+    .gr-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      color: rgba(255,248,231,0.5);
+    }
+
+    .gr-legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    @keyframes gr-rise {
+      to { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; transform: translateY(20px); }
+    }
+
+    /* ── Main Layout ──────────────────────────────────────────── */
+    .gr-main {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 2rem 4rem;
+      min-height: 75vh;
+      position: relative;
+    }
+
+    /* ── MAP ──────────────────────────────────────────────────── */
+    .gr-map-container {
+      position: relative;
+    }
+
+    .gr-map-inner {
+      position: sticky;
+      top: 6rem;
+    }
+
+    .gr-map-svg-wrap {
+      position: relative;
+      background: rgba(255,248,231,0.02);
+      border: 1px solid rgba(240,180,41,0.1);
+      border-radius: 20px;
+      overflow: hidden;
+      padding: 1.5rem;
+    }
+
+    .gr-map-svg-wrap svg {
+      width: 100%;
+      height: auto;
+    }
+
+    /* Region paths */
+    .gr-region {
+      fill: rgba(240,180,41,0.08);
+      stroke: rgba(240,180,41,0.25);
+      stroke-width: 1.5;
+      cursor: pointer;
+      transition: fill 0.3s ease, stroke 0.3s ease, filter 0.3s ease;
+    }
+
+    .gr-region:hover,
+    .gr-region.is-hovered {
+      fill: rgba(240,180,41,0.18);
+      stroke: rgba(240,180,41,0.6);
+      filter: drop-shadow(0 0 8px rgba(240,180,41,0.3));
+    }
+
+    .gr-region.is-active {
+      fill: rgba(232,115,42,0.3);
+      stroke: rgba(232,115,42,0.8);
+      filter: drop-shadow(0 0 12px rgba(232,115,42,0.4));
+    }
+
+    /* Color variants */
+    .gr-region[data-color="ingredient"] { fill: rgba(76,175,80,0.1); stroke: rgba(76,175,80,0.3); }
+    .gr-region[data-color="ingredient"].is-active { fill: rgba(76,175,80,0.3); stroke: rgba(76,175,80,0.8); }
+    .gr-region[data-color="tradition"] { fill: rgba(232,115,42,0.1); stroke: rgba(232,115,42,0.3); }
+    .gr-region[data-color="tradition"].is-active { fill: rgba(232,115,42,0.3); stroke: rgba(232,115,42,0.8); }
+    .gr-region[data-color="distribution"] { fill: rgba(100,149,237,0.1); stroke: rgba(100,149,237,0.3); }
+    .gr-region[data-color="distribution"].is-active { fill: rgba(100,149,237,0.3); stroke: rgba(100,149,237,0.8); }
+    .gr-region[data-color="mixed"] { fill: rgba(240,180,41,0.1); stroke: rgba(240,180,41,0.3); }
+    .gr-region[data-color="mixed"].is-active { fill: rgba(240,180,41,0.3); stroke: rgba(240,180,41,0.8); }
+
+    /* Region hover labels */
+    .gr-region-label {
+      font-family: var(--font-body);
+      font-size: 9px;
+      fill: rgba(255,248,231,0.5);
+      pointer-events: none;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Pin dots on map */
+    .gr-pin {
+      cursor: pointer;
+      transition: transform 0.3s var(--ease-bounce), opacity 0.3s ease;
+    }
+
+    .gr-pin circle {
+      transition: r 0.3s ease, fill 0.3s ease;
+    }
+
+    .gr-pin:hover circle { r: 9; }
+    .gr-pin.is-active circle { r: 9; fill: #E8732A; }
+
+    .gr-pin-ring {
+      animation: gr-ping 2s ease-out infinite;
+      transform-origin: center;
+      transform-box: fill-box;
+    }
+
+    @keyframes gr-ping {
+      0% { transform: scale(1); opacity: 0.6; }
+      100% { transform: scale(2.5); opacity: 0; }
+    }
+
+    /* ── Info Panel ───────────────────────────────────────────── */
+    .gr-info-panel {
+      position: sticky;
+      top: 6rem;
+      align-self: start;
+    }
+
+    .gr-default-state {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 3rem 2rem;
+      background: rgba(255,248,231,0.03);
+      border: 1px solid rgba(240,180,41,0.1);
+      border-radius: 16px;
+      min-height: 400px;
+      gap: 1rem;
+    }
+
+    .gr-default-icon {
+      font-size: 3rem;
+      opacity: 0.5;
+    }
+
+    .gr-default-title {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: rgba(255,248,231,0.6);
+    }
+
+    .gr-default-sub {
+      font-size: 0.85rem;
+      color: rgba(255,248,231,0.3);
+    }
+
+    .gr-region-panel {
+      display: none;
+      background: rgba(26,13,5,0.9);
+      border: 1px solid rgba(240,180,41,0.15);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .gr-region-panel.is-visible {
+      display: block;
+      animation: gr-panel-in 0.4s var(--ease-out-expo) forwards;
+    }
+
+    @keyframes gr-panel-in {
+      from { opacity: 0; transform: translateX(15px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .gr-panel-banner {
+      height: 120px;
+      display: flex;
+      align-items: flex-end;
+      padding: 1.2rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gr-panel-banner-bg {
+      position: absolute;
+      inset: 0;
+      opacity: 0.15;
+    }
+
+    .gr-panel-name {
+      font-family: var(--font-display);
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #FFF8E7;
+      position: relative;
+      z-index: 1;
+      line-height: 1;
+    }
+
+    .gr-panel-gujarati {
+      font-family: var(--font-script);
+      font-size: 1rem;
+      color: rgba(255,248,231,0.5);
+      position: relative;
+      z-index: 1;
+      margin-left: 0.5rem;
+    }
+
+    .gr-panel-body {
+      padding: 1.5rem;
+    }
+
+    .gr-panel-tagline {
+      font-family: var(--font-script);
+      font-size: 1.05rem;
+      color: #E8732A;
+      margin-bottom: 1rem;
+    }
+
+    .gr-category-group {
+      margin-bottom: 1.2rem;
+    }
+
+    .gr-cat-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(255,248,231,0.35);
+      margin-bottom: 0.5rem;
+    }
+
+    .gr-cat-items {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .gr-cat-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.88rem;
+      color: rgba(255,248,231,0.7);
+      line-height: 1.4;
+    }
+
+    .gr-cat-item .ci-icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 0.05rem;
+    }
+
+    .gr-panel-fact {
+      margin-top: 1rem;
+      background: rgba(240,180,41,0.06);
+      border: 1px solid rgba(240,180,41,0.15);
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+    }
+
+    .gr-fact-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #F0B429;
+      margin-bottom: 0.3rem;
+    }
+
+    .gr-fact-text {
+      font-size: 0.84rem;
+      color: rgba(255,248,231,0.55);
+      line-height: 1.5;
+    }
+
+    /* ── Region cards list ────────────────────────────────────── */
+    .gr-regions-list {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 2rem 6rem;
+    }
+
+    .gr-list-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .gr-list-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: #FFF8E7;
+    }
+
+    .gr-list-sub {
+      font-size: 0.9rem;
+      color: rgba(255,248,231,0.4);
+      margin-top: 0.5rem;
+    }
+
+    .gr-region-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .gr-region-card {
+      background: rgba(255,248,231,0.03);
+      border: 1px solid rgba(240,180,41,0.1);
+      border-radius: 14px;
+      padding: 1.4rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .gr-region-card:hover {
+      border-color: rgba(240,180,41,0.3);
+      background: rgba(255,248,231,0.06);
+      transform: translateY(-2px);
+    }
+
+    .gr-rc-top {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .gr-rc-icon {
+      font-size: 1.8rem;
+    }
+
+    .gr-rc-name {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #FFF8E7;
+    }
+
+    .gr-rc-type {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+    }
+
+    .gr-rc-desc {
+      font-size: 0.82rem;
+      color: rgba(255,248,231,0.45);
+      line-height: 1.55;
+    }
+
+    /* ── Stats bar ────────────────────────────────────────────── */
+    .gr-stats {
+      background: rgba(240,180,41,0.05);
+      border-top: 1px solid rgba(240,180,41,0.1);
+      border-bottom: 1px solid rgba(240,180,41,0.1);
+      padding: 2.5rem 2rem;
+      margin-bottom: 0;
+    }
+
+    .gr-stats-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .gr-stat-num {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #F0B429, #E8732A);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+
+    .gr-stat-label {
+      font-size: 0.8rem;
+      color: rgba(255,248,231,0.45);
+      margin-top: 0.3rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ── Responsive ───────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .gr-main {
+        grid-template-columns: 1fr;
+      }
+      .gr-info-panel,
+      .gr-map-inner {
+        position: static;
+      }
+      .gr-region-panel {
+        margin-top: 1rem;
+      }
+    }
+  </style>
+</head>
+<body class="gr-page">
+
+  <!-- LOADING SCREEN -->
+  <div class="loading-screen" id="loader">
+    <div class="loading-spinner">
+      <div class="loading-khakhra"></div>
+    </div>
+    <div class="loading-brand">SONALBEN</div>
+    <div class="loading-tagline">Taste the Family Heritage</div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav class="main-nav" id="main-nav">
+    <div class="nav-container">
+      <a class="nav-logo" id="nav-logo-btn" href="index.html" aria-label="Go to home">
+        <img src="assets/images/sonalben_logo.png" alt="Sonalben Khakhrawala Logo" class="nav-logo-img">
+        <div class="nav-logo-text">
+          <span class="nav-logo-brand">Sonalben</span>
+          <span class="nav-logo-sub">Khakhrawala</span>
+        </div>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="story.html">Our Story</a></li>
+        <li><a href="products.html">The Pantry</a></li>
+        <li><a href="khakhra-world.html">Khakhra World</a></li>
+        <li><a href="gujarat-roots.html" class="is-active" style="color: var(--brand-gold);">Gujarat Roots</a></li>
+        <li><a href="index.html#cookbook">Family Cookbook</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="nav-cart" aria-label="Cart">
+          <svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="nav-cart-count">0</span>
+        </button>
+        <button class="nav-menu-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="gr-hero">
+    <span class="gr-eyebrow">✦ Rooted in Gujarat ✦</span>
+    <h1>Where Every<br><em>Ingredient</em> Has a Home</h1>
+    <p class="gr-hero-sub">Click any region of Gujarat on the map to discover what we source there, the local food traditions that inspire us, and how we serve that community.</p>
+    <div class="gr-legend">
+      <div class="gr-legend-item">
+        <div class="gr-legend-dot" style="background:#4CAF50;"></div>
+        <span>Ingredient Source</span>
+      </div>
+      <div class="gr-legend-item">
+        <div class="gr-legend-dot" style="background:#E8732A;"></div>
+        <span>Food Tradition</span>
+      </div>
+      <div class="gr-legend-item">
+        <div class="gr-legend-dot" style="background:#6495ED;"></div>
+        <span>Distribution Hub</span>
+      </div>
+      <div class="gr-legend-item">
+        <div class="gr-legend-dot" style="background:#F0B429;"></div>
+        <span>Mixed</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN: MAP + PANEL -->
+  <div class="gr-main">
+    <!-- MAP -->
+    <div class="gr-map-container">
+      <div class="gr-map-inner">
+        <div class="gr-map-svg-wrap">
+          <!--
+            Simplified schematic SVG map of Gujarat regions.
+            Paths represent approximate shapes of key districts/zones.
+          -->
+          <svg viewBox="0 0 500 580" xmlns="http://www.w3.org/2000/svg" id="gr-map-svg" aria-label="Map of Gujarat regions">
+
+            <!-- Kutch (top-left, large) -->
+            <path
+              id="region-kutch"
+              class="gr-region"
+              data-color="mixed"
+              data-region="kutch"
+              d="M20,30 L200,20 L220,60 L240,90 L200,130 L170,160 L120,165 L60,155 L20,120 Z"
+              aria-label="Kutch region"
+            />
+            <text class="gr-region-label" x="110" y="95">KUTCH</text>
+
+            <!-- Banaskantha / North Gujarat -->
+            <path
+              id="region-north"
+              class="gr-region"
+              data-color="ingredient"
+              data-region="north-gujarat"
+              d="M200,20 L310,15 L330,55 L320,100 L280,130 L240,130 L220,100 L220,60 Z"
+              aria-label="North Gujarat region"
+            />
+            <text class="gr-region-label" x="255" y="75">NORTH GUJ.</text>
+
+            <!-- Saurashtra / Kathiawar Peninsula -->
+            <path
+              id="region-saurashtra"
+              class="gr-region"
+              data-color="ingredient"
+              data-region="saurashtra"
+              d="M60,155 L120,165 L170,160 L200,130 L240,130 L260,165 L270,200 L250,240 L220,270 L180,290 L140,300 L100,280 L70,250 L50,210 Z"
+              aria-label="Saurashtra region"
+            />
+            <text class="gr-region-label" x="155" y="220">SAURASHTRA</text>
+
+            <!-- Ahmedabad / Central Gujarat -->
+            <path
+              id="region-central"
+              class="gr-region"
+              data-color="mixed"
+              data-region="central-gujarat"
+              d="M280,130 L330,100 L380,110 L390,150 L380,185 L340,200 L300,195 L270,170 L260,165 L240,130 Z"
+              aria-label="Central Gujarat region"
+            />
+            <text class="gr-region-label" x="320" y="162">CENTRAL GUJ.</text>
+
+            <!-- Vadodara / East Gujarat -->
+            <path
+              id="region-east"
+              class="gr-region"
+              data-color="tradition"
+              data-region="east-gujarat"
+              d="M330,100 L420,85 L450,120 L445,165 L420,200 L390,210 L380,185 L390,150 L380,110 Z"
+              aria-label="East Gujarat region"
+            />
+            <text class="gr-region-label" x="390" y="147">EAST GUJ.</text>
+
+            <!-- Surat / South Gujarat -->
+            <path
+              id="region-south"
+              class="gr-region"
+              data-color="distribution"
+              data-region="south-gujarat"
+              d="M340,200 L380,185 L420,200 L445,220 L440,270 L410,310 L370,340 L340,330 L310,300 L300,260 L310,230 Z"
+              aria-label="South Gujarat region"
+            />
+            <text class="gr-region-label" x="368" y="262">SOUTH GUJ.</text>
+
+            <!-- Bhavnagar / Coastal -->
+            <path
+              id="region-coastal"
+              class="gr-region"
+              data-color="tradition"
+              data-region="coastal"
+              d="M140,300 L180,290 L220,270 L250,240 L280,260 L300,300 L300,340 L270,370 L240,380 L200,370 L170,345 L150,320 Z"
+              aria-label="Coastal region"
+            />
+            <text class="gr-region-label" x="215" y="325">COASTAL</text>
+
+            <!-- Panchmahals / Tribal Northeast -->
+            <path
+              id="region-tribal"
+              class="gr-region"
+              data-color="ingredient"
+              data-region="tribal-belt"
+              d="M420,200 L470,190 L480,240 L470,290 L440,320 L410,310 L410,270 L440,230 Z"
+              aria-label="Tribal belt region"
+            />
+            <text class="gr-region-label" x="438" y="252">TRIBAL BELT</text>
+
+            <!-- Water / Arabian Sea (decorative) -->
+            <path
+              d="M20,120 L60,155 L50,210 L70,250 L100,280 L140,300 L150,320 L170,345 L200,370 L240,380 L270,370 L300,340 L300,300 L310,300 L340,330 L370,340 L410,310 L440,320 L470,290 L480,350 L460,420 L400,460 L340,490 L280,510 L220,520 L160,510 L100,490 L50,450 L20,380 Z"
+              fill="rgba(30,144,255,0.04)"
+              stroke="rgba(30,144,255,0.12)"
+              stroke-width="1"
+              pointer-events="none"
+            />
+            <text class="gr-region-label" x="180" y="460" style="fill:rgba(100,149,237,0.3); font-size:10px; letter-spacing:0.2em;">ARABIAN SEA</text>
+
+            <!-- PIN dots for key cities -->
+            <!-- Ahmedabad -->
+            <g class="gr-pin" data-region="central-gujarat" id="pin-ahmedabad" style="cursor:pointer;">
+              <circle cx="320" cy="155" r="6" fill="#F0B429" opacity="0.9"/>
+              <circle class="gr-pin-ring" cx="320" cy="155" r="6" fill="none" stroke="#F0B429" stroke-width="2" opacity="0.5"/>
+            </g>
+            <text x="328" y="152" class="gr-region-label" style="font-size:8px; fill:rgba(255,248,231,0.6);">Ahmedabad</text>
+
+            <!-- Kutch / Bhuj -->
+            <g class="gr-pin" data-region="kutch" id="pin-bhuj" style="cursor:pointer;">
+              <circle cx="100" cy="85" r="5" fill="#F0B429" opacity="0.9"/>
+              <circle class="gr-pin-ring" cx="100" cy="85" r="5" fill="none" stroke="#F0B429" stroke-width="2" opacity="0.5" style="animation-delay:0.7s;"/>
+            </g>
+            <text x="108" y="82" class="gr-region-label" style="font-size:8px; fill:rgba(255,248,231,0.6);">Bhuj</text>
+
+            <!-- Surat -->
+            <g class="gr-pin" data-region="south-gujarat" id="pin-surat" style="cursor:pointer;">
+              <circle cx="390" cy="265" r="5" fill="#F0B429" opacity="0.9"/>
+              <circle class="gr-pin-ring" cx="390" cy="265" r="5" fill="none" stroke="#F0B429" stroke-width="2" opacity="0.5" style="animation-delay:1.4s;"/>
+            </g>
+            <text x="398" y="262" class="gr-region-label" style="font-size:8px; fill:rgba(255,248,231,0.6);">Surat</text>
+
+            <!-- Rajkot -->
+            <g class="gr-pin" data-region="saurashtra" id="pin-rajkot" style="cursor:pointer;">
+              <circle cx="175" cy="200" r="5" fill="#F0B429" opacity="0.9"/>
+              <circle class="gr-pin-ring" cx="175" cy="200" r="5" fill="none" stroke="#F0B429" stroke-width="2" opacity="0.5" style="animation-delay:2.1s;"/>
+            </g>
+            <text x="183" y="197" class="gr-region-label" style="font-size:8px; fill:rgba(255,248,231,0.6);">Rajkot</text>
+
+            <!-- Vadodara -->
+            <g class="gr-pin" data-region="east-gujarat" id="pin-vadodara" style="cursor:pointer;">
+              <circle cx="400" cy="155" r="5" fill="#F0B429" opacity="0.9"/>
+              <circle class="gr-pin-ring" cx="400" cy="155" r="5" fill="none" stroke="#F0B429" stroke-width="2" opacity="0.5" style="animation-delay:2.8s;"/>
+            </g>
+            <text x="408" y="152" class="gr-region-label" style="font-size:8px; fill:rgba(255,248,231,0.6);">Vadodara</text>
+
+          </svg>
+        </div>
+
+        <!-- Mobile: tap hint -->
+        <p style="font-size:0.75rem; color:rgba(255,248,231,0.3); text-align:center; margin-top:0.75rem;">
+          Tap a region to discover its story
+        </p>
+      </div>
+    </div>
+
+    <!-- INFO PANEL -->
+    <div class="gr-info-panel">
+      <!-- Default state -->
+      <div class="gr-default-state" id="gr-default">
+        <div class="gr-default-icon">🗺️</div>
+        <div class="gr-default-title">Click a region to explore</div>
+        <p class="gr-default-sub">Each part of Gujarat contributes something unique to Sonalben's recipes and reach.</p>
+      </div>
+
+      <!-- Region panel (shown on click) -->
+      <div class="gr-region-panel" id="gr-region-panel">
+        <div class="gr-panel-banner" id="gr-panel-banner">
+          <div class="gr-panel-banner-bg" id="gr-panel-banner-bg"></div>
+          <div>
+            <div class="gr-panel-name" id="gr-panel-name">—</div>
+            <div class="gr-panel-gujarati" id="gr-panel-gujarati">—</div>
+          </div>
+        </div>
+        <div class="gr-panel-body">
+          <div class="gr-panel-tagline" id="gr-panel-tagline">—</div>
+
+          <div class="gr-category-group" id="gr-ingredients-group">
+            <div class="gr-cat-title">🌾 Ingredients Sourced Here</div>
+            <div class="gr-cat-items" id="gr-ingredients-list"></div>
+          </div>
+
+          <div class="gr-category-group" id="gr-traditions-group">
+            <div class="gr-cat-title">🎉 Local Food Traditions</div>
+            <div class="gr-cat-items" id="gr-traditions-list"></div>
+          </div>
+
+          <div class="gr-category-group" id="gr-distribution-group">
+            <div class="gr-cat-title">📦 Our Presence Here</div>
+            <div class="gr-cat-items" id="gr-distribution-list"></div>
+          </div>
+
+          <div class="gr-panel-fact">
+            <div class="gr-fact-label">Did You Know?</div>
+            <div class="gr-fact-text" id="gr-panel-fact"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="gr-stats">
+    <div class="gr-stats-inner">
+      <div>
+        <div class="gr-stat-num" id="stat-regions">8</div>
+        <div class="gr-stat-label">Gujarat Regions</div>
+      </div>
+      <div>
+        <div class="gr-stat-num" id="stat-ingredients">24+</div>
+        <div class="gr-stat-label">Local Ingredients</div>
+      </div>
+      <div>
+        <div class="gr-stat-num" id="stat-partners">60+</div>
+        <div class="gr-stat-label">Farmer Partners</div>
+      </div>
+      <div>
+        <div class="gr-stat-num" id="stat-cities">120+</div>
+        <div class="gr-stat-label">Cities Served</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REGION CARDS GRID (all regions at a glance) -->
+  <div class="gr-regions-list">
+    <div class="gr-list-header">
+      <h2 class="gr-list-title">All Regions at a Glance</h2>
+      <p class="gr-list-sub">Every corner of Gujarat has given something to Sonalben's story.</p>
+    </div>
+    <div class="gr-region-cards" id="gr-region-cards"></div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer style="background:#07040200; padding:2.5rem 2rem; text-align:center; border-top:1px solid rgba(240,180,41,0.08);">
+    <p style="font-family:var(--font-script); font-size:1.1rem; color:rgba(255,248,231,0.25);">
+      Made with ❤️ in Gujarat — Sonalben Khakhrawala
+    </p>
+    <div style="margin-top:1rem; display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+      <a href="khakhra-world.html" style="color:rgba(255,248,231,0.35); font-size:0.85rem; text-decoration:none; transition:color 0.2s;">← Khakhra World</a>
+      <a href="products.html" style="color:rgba(255,248,231,0.35); font-size:0.85rem; text-decoration:none; transition:color 0.2s;">Shop The Pantry →</a>
+    </div>
+  </footer>
+
+  <script>
+    // ── Region Data ──────────────────────────────────────────────
+    const regionData = {
+      'kutch': {
+        name: 'Kutch',
+        gujarati: 'કચ્છ',
+        tagline: 'The land of extremes — and extraordinary flavours.',
+        color: '#F0B429',
+        gradient: 'linear-gradient(135deg, #8B6914, #F0B429)',
+        icon: '🏜️',
+        type: 'mixed',
+        typeLabel: 'Ingredients & Tradition',
+        description: 'The vast, otherworldly salt marshes of Kutch are home to some of Gujarat\'s most prized ingredients.',
+        ingredients: [
+          { icon: '🧂', text: 'White Rann salt — mineral-rich unrefined salt for our khakhras' },
+          { icon: '🌿', text: 'Wild ajwain (carom seeds) harvested by Kutchi farming families' },
+          { icon: '🌾', text: 'Bajra (pearl millet) for our multigrain range' }
+        ],
+        traditions: [
+          { icon: '🎪', text: 'Rann Utsav food culture — elaborate community feasts with dried snacks & khichdi' },
+          { icon: '🤝', text: 'The Ahir community's tradition of gifting khakhras at weddings' },
+          { icon: '🐪', text: 'Pastoral nomadic snacking culture that shaped our original compact recipe' }
+        ],
+        distribution: [
+          { icon: '📦', text: 'Partner stores in Bhuj, Anjar, and Mandvi' },
+          { icon: '🎪', text: 'Annual presence at Rann Utsav festival stalls' }
+        ],
+        fact: 'The white salt harvested from the Rann of Kutch during winter months has been used in traditional Gujarati cooking for over 500 years — and it\'s in every Sonalben khakhra.'
+      },
+      'north-gujarat': {
+        name: 'North Gujarat',
+        gujarati: 'ઉત્તર ગુજરાત',
+        tagline: 'The breadbasket. Where our wheat begins its journey.',
+        color: '#4CAF50',
+        gradient: 'linear-gradient(135deg, #1B5E20, #4CAF50)',
+        icon: '🌾',
+        type: 'ingredient',
+        typeLabel: 'Ingredient Source',
+        description: 'The fertile plains of Banaskantha and Patan districts are Gujarat's most productive wheat-growing region.',
+        ingredients: [
+          { icon: '🌾', text: 'Stone-ground whole wheat — the primary flour in all our khakhras' },
+          { icon: '🌻', text: 'Sunflower seeds for our multigrain variety' },
+          { icon: '🫙', text: 'Castor oil (errand tel) used in traditional preservation recipes' }
+        ],
+        traditions: [
+          { icon: '🎶', text: 'Uttarayan (Makar Sankranti) kite festival — khakhras are traditional festival food' },
+          { icon: '🍲', text: 'Bajra rotla and khichdi traditions that shaped our grain sourcing philosophy' },
+          { icon: '👨‍🌾', text: 'Patidar farming community's commitment to chemical-free wheat cultivation' }
+        ],
+        distribution: [
+          { icon: '📦', text: 'Wholesale distributor in Mehsana and Patan' },
+          { icon: '🚛', text: 'Direct farm-to-facility collection twice monthly' }
+        ],
+        fact: 'Banaskantha district alone produces over 2 million tonnes of wheat annually, making it Gujarat's most important agricultural region. We source exclusively from small, family-owned farms here.'
+      },
+      'saurashtra': {
+        name: 'Saurashtra',
+        gujarati: 'સૌરાષ્ટ્ર',
+        tagline: 'The heartland of Gujarati snack culture.',
+        color: '#4CAF50',
+        gradient: 'linear-gradient(135deg, #33691E, #8BC34A)',
+        icon: '🏛️',
+        type: 'ingredient',
+        typeLabel: 'Ingredient Source',
+        description: 'The Kathiawar Peninsula is the spiritual heartland of Gujarati cuisine and our richest sourcing region.',
+        ingredients: [
+          { icon: '🫙', text: 'Cold-pressed sesame oil from Gondal and Upleta — our primary cooking oil' },
+          { icon: '🌶️', text: 'Bhavnagri chilli — mild, flavourful, the secret behind our masala blend' },
+          { icon: '🥜', text: 'Roasted groundnuts from Junagadh for our namkeen range' },
+          { icon: '🌿', text: 'Fresh methi (fenugreek) from family farms near Rajkot' }
+        ],
+        traditions: [
+          { icon: '🎊', text: 'Navratri garba nights where khakhras are the quintessential midnight snack' },
+          { icon: '🍽️', text: 'Kathiawadi thali tradition — heavy, spiced, always with crispy accompaniments' },
+          { icon: '☕', text: 'Chai-khakhra culture in every Saurashtra home — our core market' }
+        ],
+        distribution: [
+          { icon: '📦', text: 'Major distribution hub in Rajkot — largest outside Ahmedabad' },
+          { icon: '🏪', text: 'Retail presence in 300+ stores across Rajkot, Jamnagar & Bhavnagar' },
+          { icon: '🚚', text: 'Weekly deliveries to 45 towns across the peninsula' }
+        ],
+        fact: 'Gujarat produces 70% of India\'s sesame. The sesame oil from Gondal\'s cold-press mills is widely considered the finest in the country — and the reason our khakhras have that distinct nuttiness.'
+      },
+      'central-gujarat': {
+        name: 'Central Gujarat',
+        gujarati: 'મધ્ય ગુજરાત',
+        tagline: 'Our home. The beating heart of Sonalben.',
+        color: '#F0B429',
+        gradient: 'linear-gradient(135deg, #E65100, #F0B429)',
+        icon: '🏙️',
+        type: 'mixed',
+        typeLabel: 'Headquarters & Hub',
+        description: 'Ahmedabad and the surrounding districts are where Sonalben was born, and where our production and HQ still thrives.',
+        ingredients: [
+          { icon: '🌿', text: 'Fresh herbs from Anand district\'s cooperative farms' },
+          { icon: '🫙', text: 'Hand-ground spice blends sourced from Manek Chowk spice merchants' },
+          { icon: '🌾', text: 'Rice flour for special rice khakhra varieties' }
+        ],
+        traditions: [
+          { icon: '🏠', text: 'The Ahmedabad pol culture — neighbourhood snacking, sharing, and community' },
+          { icon: '🍽️', text: 'Gujarati thali dining culture that forms the foundation of our flavour philosophy' },
+          { icon: '🎒', text: 'The iconic tiffin culture — khakhras as the perfect school and office snack' }
+        ],
+        distribution: [
+          { icon: '🏭', text: 'Main production facility and headquarters — Vatva, Ahmedabad' },
+          { icon: '📦', text: 'Direct-to-consumer delivery across all 63 pin codes in AMC limits' },
+          { icon: '🏪', text: '150+ retail partners including major chains and neighbourhood kirana stores' },
+          { icon: '🌐', text: 'Nationwide online orders dispatched from our Ahmedabad facility' }
+        ],
+        fact: 'Manek Chowk in the walled city of Ahmedabad — Asia\'s largest night food market — is where Sonalben first discovered the perfect masala ratio that became our signature Masala Khakhra blend.'
+      },
+      'east-gujarat': {
+        name: 'East Gujarat',
+        gujarati: 'પૂર્વ ગુજરાત',
+        tagline: 'Tribal forests, tribal flavours — ancient and pure.',
+        color: '#E8732A',
+        gradient: 'linear-gradient(135deg, #BF360C, #E8732A)',
+        icon: '🌳',
+        type: 'tradition',
+        typeLabel: 'Food Tradition',
+        description: 'Vadodara and the surrounding hilly tracts bridge Gujarati and Maharashtrian food culture — a unique culinary confluence.',
+        ingredients: [
+          { icon: '🌽', text: 'Maize from the hilly tribal tracts of Chhota Udaipur' },
+          { icon: '🫙', text: 'Kokum (Garcinia indica) for traditional souring in special recipes' },
+          { icon: '🌿', text: 'Wild turmeric from forested Dang district — the deepest gold' }
+        ],
+        traditions: [
+          { icon: '🎊', text: 'Vadodara\'s Navratri — the grandest celebration in Gujarat, with massive food culture' },
+          { icon: '🌺', text: 'Adivasi tribal food traditions using forest ingredients — inspires our seasonal specials' },
+          { icon: '🎭', text: 'Baroda royal court cuisine — a fusion tradition that brought spice sophistication to Gujarat' }
+        ],
+        distribution: [
+          { icon: '📦', text: 'Regional distributor covering Vadodara, Anand, Kheda' },
+          { icon: '🏪', text: '80+ retail points across the Vadodara urban area' }
+        ],
+        fact: 'The Gaekwad dynasty of Baroda (Vadodara) was famous for its sophisticated cuisine that blended Mughal, Maratha, and Gujarati flavours. This royal culinary heritage deeply influenced the spice philosophy of Central Gujarat.'
+      },
+      'south-gujarat': {
+        name: 'South Gujarat',
+        gujarati: 'દક્ષિણ ગુજરાત',
+        tagline: 'The commercial powerhouse. Where Sonalben meets the world.',
+        color: '#6495ED',
+        gradient: 'linear-gradient(135deg, #1565C0, #6495ED)',
+        icon: '🏭',
+        type: 'distribution',
+        typeLabel: 'Distribution Hub',
+        description: 'Surat — India\'s diamond and textile capital — is Sonalben\'s gateway to national markets and urban consumers.',
+        ingredients: [
+          { icon: '🌿', text: 'Dried coconut from coastal Valsad and Navsari for premium variety' },
+          { icon: '🌶️', text: 'Surat\'s unique sweet-spicy chilli cultivar for our Surti Masala edition' }
+        ],
+        traditions: [
+          { icon: '🦋', text: 'Surat\'s famous Locho, Ghari, and Ponk — a city with the most adventurous snack culture in Gujarat' },
+          { icon: '💎', text: 'The diamond and textile worker community\'s demand for premium, convenient snacks — a key market for us' },
+          { icon: '🚢', text: 'Surat\'s historic port trade connections that shaped its cosmopolitan palate' }
+        ],
+        distribution: [
+          { icon: '🏭', text: 'Secondary warehouse and distribution centre in Surat\'s GIDC area' },
+          { icon: '📦', text: '200+ retail partners in Surat city alone' },
+          { icon: '✈️', text: 'Export dispatch point for NRI orders to the UK, USA, and East Africa' },
+          { icon: '🚛', text: 'National highway connectivity for bulk deliveries to Mumbai and Pune' }
+        ],
+        fact: 'Surat has the highest per-capita spending on street food of any Indian city. Its famously demanding snack culture is why Sonalben maintains stricter quality controls on batches sent to Surat than anywhere else.'
+      },
+      'coastal': {
+        name: 'Coastal Gujarat',
+        gujarati: 'દરિયાકાંઠો',
+        tagline: 'Sea breeze, sun salt, and centuries of seafaring flavour.',
+        color: '#E8732A',
+        gradient: 'linear-gradient(135deg, #4E342E, #E8732A)',
+        icon: '🌊',
+        type: 'tradition',
+        typeLabel: 'Food Tradition',
+        description: 'Gujarat has 1,600 km of coastline. The fishing communities of Bhavnagar, Porbandar, and Dwarka carry some of the state's oldest food traditions.',
+        ingredients: [
+          { icon: '🧂', text: 'Sea salt from Alang and Porbandar — a traditional ingredient in coastal recipes' },
+          { icon: '🫙', text: 'Pressed coconut oil from Dwarka coastal areas for specialty editions' }
+        ],
+        traditions: [
+          { icon: '🐟', text: 'Koli fishermen\'s dried-snack culture — the original inspiration for easy, portable, long-lasting food' },
+          { icon: '🕌', text: 'Porbandar\'s Gandhian simplicity philosophy — minimal, pure, honest food' },
+          { icon: '🌊', text: 'Dwarka temple town\'s sattvic food tradition — no onion, no garlic — aligns perfectly with our pure recipe philosophy' }
+        ],
+        distribution: [
+          { icon: '📦', text: 'Distributor network across Bhavnagar, Botad, Palitana' },
+          { icon: '⛴️', text: 'Occasional supply to Bet Dwarka island ferry concessions' }
+        ],
+        fact: 'Dwarka is one of India\'s holiest cities, and the sattvic (pure vegetarian, without onion or garlic) food tradition there is centuries old. Our pure, additive-free recipe philosophy was deeply inspired by this tradition.'
+      },
+      'tribal-belt': {
+        name: 'Tribal Belt',
+        gujarati: 'આદિવાસી પ્રદેશ',
+        tagline: 'Forest wisdom. Ancient grains. Pure and proud.',
+        color: '#4CAF50',
+        gradient: 'linear-gradient(135deg, #1B5E20, #66BB6A)',
+        icon: '🌿',
+        type: 'ingredient',
+        typeLabel: 'Ingredient Source',
+        description: 'The Panchmahals, Dahod, and Dang districts form Gujarat's tribal heartland — home to ancient agricultural traditions and rare heritage grains.',
+        ingredients: [
+          { icon: '🌾', text: 'Kodo millet and ragi from Dang\'s traditional tribal farming' },
+          { icon: '🌿', text: 'Wild collected dried herbs that inspire our seasonal limited editions' },
+          { icon: '🫚', text: 'Mahua oil and other forest produce from Panchmahals community cooperatives' }
+        ],
+        traditions: [
+          { icon: '🎋', text: 'Bhilala tribal harvest festivals — food as celebration and gratitude' },
+          { icon: '🌿', text: 'Dang\'s ancient tradition of preparing sun-dried, fermented foods for year-round use' },
+          { icon: '🤲', text: 'Community grain-sharing traditions that inspire our "share a khakhra" gifting packs' }
+        ],
+        distribution: [
+          { icon: '📦', text: 'Emerging distribution in Godhra, Dahod, and Chhota Udaipur towns' },
+          { icon: '🤝', text: 'Fair-trade sourcing partnerships with 3 tribal farming cooperatives' }
+        ],
+        fact: 'The Dang district in South-East Gujarat is covered by India\'s densest teak forests and receives the highest rainfall in the state. The farming communities here preserve heritage grain varieties that have been grown for over 2,000 years.'
+      }
+    };
+
+    // ── DOM refs ──────────────────────────────────────────────────
+    const regions = document.querySelectorAll('.gr-region');
+    const pins = document.querySelectorAll('.gr-pin');
+    const defaultState = document.getElementById('gr-default');
+    const regionPanel = document.getElementById('gr-region-panel');
+
+    let activeRegion = null;
+
+    function populatePanel(key) {
+      const d = regionData[key];
+      if (!d) return;
+
+      // Banner
+      document.getElementById('gr-panel-banner').style.background = d.gradient;
+      document.getElementById('gr-panel-name').textContent = d.name;
+      document.getElementById('gr-panel-gujarati').textContent = d.gujarati;
+
+      document.getElementById('gr-panel-tagline').textContent = d.tagline;
+
+      // Ingredients
+      const ingList = document.getElementById('gr-ingredients-list');
+      ingList.innerHTML = '';
+      d.ingredients.forEach(item => {
+        ingList.innerHTML += `<div class="gr-cat-item"><span class="ci-icon">${item.icon}</span><span>${item.text}</span></div>`;
+      });
+
+      // Traditions
+      const tradList = document.getElementById('gr-traditions-list');
+      tradList.innerHTML = '';
+      d.traditions.forEach(item => {
+        tradList.innerHTML += `<div class="gr-cat-item"><span class="ci-icon">${item.icon}</span><span>${item.text}</span></div>`;
+      });
+
+      // Distribution
+      const distList = document.getElementById('gr-distribution-list');
+      distList.innerHTML = '';
+      d.distribution.forEach(item => {
+        distList.innerHTML += `<div class="gr-cat-item"><span class="ci-icon">${item.icon}</span><span>${item.text}</span></div>`;
+      });
+
+      // Fact
+      document.getElementById('gr-panel-fact').textContent = d.fact;
+
+      // Show panel
+      defaultState.style.display = 'none';
+      regionPanel.classList.remove('is-visible');
+      void regionPanel.offsetWidth; // force reflow for re-trigger animation
+      regionPanel.classList.add('is-visible');
+    }
+
+    function activateRegion(key) {
+      // Reset all
+      regions.forEach(r => r.classList.remove('is-active'));
+      pins.forEach(p => p.classList.remove('is-active'));
+
+      // Activate matching region shapes
+      document.querySelectorAll(`[data-region="${key}"]`).forEach(el => {
+        el.classList.add('is-active');
+      });
+
+      activeRegion = key;
+      populatePanel(key);
+
+      // Scroll panel into view on mobile
+      if (window.innerWidth < 900) {
+        setTimeout(() => regionPanel.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+      }
+    }
+
+    // Click handlers for SVG regions
+    regions.forEach(r => {
+      r.addEventListener('click', () => activateRegion(r.dataset.region));
+      r.addEventListener('mouseenter', () => r.classList.add('is-hovered'));
+      r.addEventListener('mouseleave', () => r.classList.remove('is-hovered'));
+    });
+
+    // Click handlers for pin dots
+    pins.forEach(p => {
+      p.addEventListener('click', () => activateRegion(p.dataset.region));
+    });
+
+    // ── Build region cards grid ───────────────────────────────────
+    const cardsContainer = document.getElementById('gr-region-cards');
+    const colorMap = {
+      ingredient: { bg: 'rgba(76,175,80,0.1)', border: 'rgba(76,175,80,0.25)', text: '#4CAF50' },
+      tradition:  { bg: 'rgba(232,115,42,0.1)', border: 'rgba(232,115,42,0.25)', text: '#E8732A' },
+      distribution: { bg: 'rgba(100,149,237,0.1)', border: 'rgba(100,149,237,0.25)', text: '#6495ED' },
+      mixed:      { bg: 'rgba(240,180,41,0.1)', border: 'rgba(240,180,41,0.25)', text: '#F0B429' }
+    };
+
+    Object.entries(regionData).forEach(([key, d]) => {
+      const c = colorMap[d.type] || colorMap.mixed;
+      const card = document.createElement('div');
+      card.className = 'gr-region-card';
+      card.setAttribute('data-key', key);
+      card.innerHTML = `
+        <div class="gr-rc-top">
+          <span class="gr-rc-icon">${d.icon}</span>
+          <div>
+            <div class="gr-rc-name">${d.name}</div>
+            <span class="gr-rc-type" style="background:${c.bg}; color:${c.text}; border:1px solid ${c.border};">${d.typeLabel}</span>
+          </div>
+        </div>
+        <p class="gr-rc-desc">${d.tagline}</p>
+      `;
+      card.addEventListener('click', () => {
+        activateRegion(key);
+        // Scroll to map section
+        document.querySelector('.gr-main').scrollIntoView({ behavior: 'smooth' });
+      });
+      cardsContainer.appendChild(card);
+    });
+
+    // ── Animate stats counter ──────────────────────────────────────
+    function animateCounter(el, target, suffix = '') {
+      const isNumber = !isNaN(target);
+      if (!isNumber) { el.textContent = target; return; }
+      let current = 0;
+      const step = Math.ceil(target / 40);
+      const interval = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.textContent = current + suffix;
+        if (current >= target) clearInterval(interval);
+      }, 30);
+    }
+
+    const statsObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(document.getElementById('stat-regions'), 8, '');
+          animateCounter(document.getElementById('stat-ingredients'), 24, '+');
+          animateCounter(document.getElementById('stat-partners'), 60, '+');
+          animateCounter(document.getElementById('stat-cities'), 120, '+');
+          statsObs.disconnect();
+        }
+      });
+    }, { threshold: 0.5 });
+
+    statsObs.observe(document.querySelector('.gr-stats'));
+
+  </script>
+
+</body>
+</html>
